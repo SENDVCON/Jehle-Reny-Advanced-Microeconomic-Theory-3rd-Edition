@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+\usepackage{multirow}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S15.2\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\begin{enumerate}
+\item Suppose that Dmitry's Tea House is adjacent to Qian's Auto Body Shop. The noise from the auto body shop hurts the tea house's business as follows:
+	\begin{center}
+\begin{tabular}{ c c c }
+ Qian's output & Qian's profit & Dmitry's profit \\
+ 0 & 0 & 400 \\
+ 1 & 300 & 200\\
+ 2 & 400 & 0
+\end{tabular}
+\end{center}
+	\begin{enumerate}
+	\item If no one has clearly defined property rights concerning noise, then what would be Qian's output?
+	\smallskip\\\\
+	If no one has a clearly defined property right, Qian will maximize her own profit and thus select an output level of 2.\\
+	\item Suppose that the court grants Dmitry the right to silence, and Qian needs Dmitry's permission in order to operate. If there are no transaction costs, what will be Qian's output in the end? How much would Qian offer to Dmitry?
+	\smallskip\\\\
+	Qian and Dmitry's joint profit is maximized at output level of 1.  If Dmitry has the right to silence, Qian can offer Dmitry 200 (his point of indifference) to increase output from 0 to 1.\\   
+	\item Now suppose that the court grants Qian the right to make as much noise as she wants, and now Dmitry needs to pay Qian if he wants silence. If there are no transaction costs, what will be A's output in the end? How much would Dmitry offer to Qian?
+	\smallskip\\\\
+	Qian and Dmitry's joint profit is maximized at output level of 1.  If Qian has the right to noise, Dmitry can offer Qian 100 (her point of indifference) to decrease output from 2 to 1.\\   
+	\end{enumerate}
+\pagebreak
+\item Consider a manufactured good whose production process generates pollution. The inverse demand curve for the good is given by $p=\frac{100}{3}-\frac{Q}{3}$, while the private marginal cost curve is given by $MC^{p}=Q$. The marginal damage (external cost) from each unit of production is given by $MC^{e}=2Q$.
+	\begin{enumerate}
+	\item Find the competitive market outcome (price and quantity) for the good when there is no correction for the externality.
+	\smallskip\\\\
+	If there is no correction for the externality, the private manufacturers will maximize profit\\
+	$MR=MC$ (profit maximization)\\
+	Since the market is competitive, firms will enter until there is zero profit\\
+	$MR=p=MC^p$ (zero profit)\\
+	$\Rightarrow\dfrac{100}{3}-\dfrac{Q}{3}=Q$\\
+	$\Rightarrow Q^*=25$\\
+	$\Rightarrow p^*=25$\\
+    \item Find the socially optimal level of output (taking into account the negative externality).
+	\smallskip\\\\
+	Given the negative externality, the total marginal cost is given by\\
+	$MC^t=MC^p+MC^e=Q+2Q=3Q$\\
+	We will still profit maximize and firms will still enter until there is zero profit\\
+	$MR=MC^t$ (profit maximization)\\
+	$MR=p=MC^t$ (zero profit)\\
+	$\Rightarrow\dfrac{100}{3}-\dfrac{Q}{3}=3Q$\\
+	$\Rightarrow\dfrac{100}{3}-\dfrac{Q}{3}=3Q$\\
+	$\Rightarrow Q^0=10$\\
+	\item Suppose that the government imposes an emissions fee of \$t per unit of emissions. How large should the emissions fee be if the market is to produce the socially optimally level of output?
+	\smallskip\\\\
+	We wish to add a tax such that the equilibrium quantity is the societally optimal quantity $Q^0$, thus our equilibrium condition must satisfy\\
+	$MR(Q|Q=Q^0)=p(Q|Q=Q^0)=MC^p(Q|Q_0)+t$\\
+	$\Rightarrow 30=10+t$\\
+	$\Rightarrow t=20$\\\\
+	In general, given externality $\phi_e$, we have\\
+	$$t=-\phi_e'(Q^0)=-MC^e(10)=-20$$\\
+	Here $t$ is a tax if negative externality and a subsidy if positive externality.
+	\end{enumerate}
+\pagebreak
+\item Suppose that a team of $I$ members work on a project. If member $i$ exerts effort $e_{i}\in\mathcal{R}_{+}$ for each $i$, then the final quality of the project will be $e_{1}+...+e_{I}$, which is equally enjoyed by all members. But, the cost of effort $c(e_{i})=\frac{e_{i}^{2}}{2}$ accrues only to member $i$. In other words, if each member $i$ chooses $e_{i}$ (so the total team effort profile is equal to $(e_{1},...,e_{I})$), then each member's utility is equal to
+    \begin{equation*}
+    u_{i}(e_{1},...,e_{I})=e_{1}+...+e_{I}-\frac{1}{2}e_{i}^{2}.
+    \end{equation*}
+    \begin{enumerate}
+    \item What is each member's socially optimal effort level (that maximizes $\sum_{i=1}^{I}u_{i}(e_{1},...,e_{I})$)?
+    \smallskip\\\\
+    Social utility is given by\\
+    $$u_S(\textbf{e})=\sum_{i=1}^nu_i(\textbf{e})=I(e_1+...+e_I)-\sum_{i=1}^nc_i(e_i)$$
+    Thus, the socially optimal level for each individual effort is the given by maximizing $u_S(\textbf{e})$.  We have the first order condition\\
+    $$\dfrac{\partial}{\partial e_i}u_S(\textbf{e})=I-e_i=0\Rightarrow e_i=I$$
+    \item Given the other members' effort choices $(e_{1},...,e_{i-1},e_{i+1},...,e_{I})$, what is member $i$'s optimal effort level (that maximizes $u_{i}(e_{1},...,e_{I})$)?
+    \smallskip\\\\
+    Each member maximizes utility with respect to $e_i$ and so we have the first order condtion\\
+    $$\dfrac{\partial}{\partial e_i}u_i(\textbf{e})=1-e_i=0\Rightarrow e_i=1$$
+    \end{enumerate}
+\pagebreak
+\item Consider the public-good problem studied in class. Now suppose that there are 3 consumers, and each consumer's utility from public good $x$ is given as follows:
+    \begin{equation*}
+    \phi_{1}(x)=\ln(x),~\phi_{2}(x)=2\ln(x),~\text{and }\phi_{3}(x)=3\ln(x).
+    \end{equation*}
+    In addition, the cost of supplying $q$ units of the public good is equal to $c(q)=q^{2}$.
+    \begin{enumerate}
+    \item Find the socially optimal level of public good.\\\\
+    Social utility is given by\\
+    $$u_S(q)=\phi_1(q)+\phi_2(q)+\phi_3(q)-c(q)=ln(q)+2ln(q)+3ln(q)-q^2$$
+    Maximizing with respect to $q$, we have the first order condition\\
+    $$\dfrac{d}{dq}u_S(q)=\dfrac{1}{q}+\dfrac{2}{q}+\dfrac{3}{q}-2q=\dfrac{6}{q}-2q=0\Rightarrow q=\sqrt{3}$$
+    \item Find the competitive market outcome.\\\\
+    We have here that\\
+    $$\phi_1(q)<\phi_2(q)<\phi_3(q)$$
+    And so in equilibrium $q_1^*=q_2^*=0$ (free rider problem)\\
+    Consumer 3 will maximize own utility given by\\
+    $$u_3(q)=\phi_3(q)-c(q)=3ln(q)-q^2$$
+    Maximizing with respect to $q$, we have the first order condition\\
+    $$\dfrac{d}{dq}u_3(q)=\dfrac{3}{q}-2q==0\Rightarrow q=\sqrt{\dfrac{3}{2}}$$
+    \item Find the Lindahl equilibrium (total quantity and the personalized price for each consumer).\\\\
+    A competitive firm offers the same quantity $q$ to each consumer at unique price $p_i$.  
+    The competitive firm, being a price taker will mazimize profit\\
+    $$\sum_{i=1}^3p_i=MC(q)=2q$$
+    Each consumer has utility function\\
+    $$u_i(q)=\phi_i(q)-p_iq$$
+    Maximizing with respect to q, we have the first order condition\\
+    $$\dfrac{d}{dq}u_i(q)=\dfrac{i}{q}-p_i=0\Rightarrow p_i=\dfrac{i}{q}\Rightarrow\sum_{i=1}^3p_i=\dfrac{6}{q}$$
+    And so the firm will supply\\
+    $$\sum_{i=1}^3p_i=\dfrac{6}{q}=2q\Rightarrow q^*=\sqrt{3}$$
+    $$\Rightarrow p_1=\dfrac{1}{\sqrt{3}}\Rightarrow p_2=\dfrac{2}{\sqrt{3}}\Rightarrow p_3=\dfrac{3}{\sqrt{3}}$$
+    \end{enumerate}
+\end{enumerate}
+\end{document} 

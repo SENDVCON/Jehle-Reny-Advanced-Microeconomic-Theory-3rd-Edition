@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+\usepackage{multirow}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S14.1\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\begin{enumerate}
+\item Consider a two-consumer, two-good exchange economy. Utility functions and endowments are
+	\begin{eqnarray*}
+	&&u^{1}(x_{1},x_{2})	=x_{2}\text{ and }\mathbf{e}^{1}=(\alpha,1),\\
+	&&u^{2}(x_{1},x_{2})	=x_{1}\text{ and }\mathbf{e}^{2}=(1,1).
+	\end{eqnarray*}
+	
+	\begin{itemize}
+	\item[(a)] Show that for $\alpha>0$, a Walrasian equilibrium always exists. Express the equilibrium allocation and the equilibrium price as a function of $\alpha$.
+	\smallskip\\\\
+	Let $\alpha>0$\\\\
+	For consumer 1, we have\\
+	$y^1=\alpha p_1+p_2$\\
+	$x_1^{1*}=0$ and $x_2^{1*}=\dfrac{\alpha p_1+p_2}{p_2}=\alpha\dfrac{p_1}{p_2}+1$\\\\
+	For consumer 2, we have\\
+	$y^2=p_1+p_2$\\
+	$x_1^{2*}=\dfrac{p_1+p_2}{p_1}=1+\dfrac{p_2}{p_1}$ and $x_2^{2*}=0$\\\\
+	Our market clearing condition must hold and so\\
+	$x_1^1+x_1^2=e_1^1+e_1^2=\alpha+1\Rightarrow0+1+\dfrac{p_2}{p_1}=\alpha+1\Rightarrow\alpha=\dfrac{p_2}{p_1}$\\
+	$\Rightarrow\textbf{x}^{1*}=(0,2)\Rightarrow\textbf{x}^{2*}=(\alpha+1,0)$\\\\
+	Thus, our equilibrium must always exist\\
+	\item[(b)] Show that if $\alpha=0$, then there does not exist a Walrasian equilibrium. Normalize $p_{1}=1$ and separately consider the case when $p_{2}>0$ and the case when $p_{2}=0$.
+	\smallskip\\\\
+	Let $\alpha=0$\\
+	Intuitively, consumer 2 has a good that consumer 1 wants, but consumer 1 has nothing it can give in return that would provide any value to consumer 2.\\\\
+	For consumer 1, we have\\
+	$y^1=p_2$\\
+	$x_1^{1*}=0$ and $x_2^{1*}=\dfrac{p_2}{p_2}=1$\\\\
+	For consumer 2, we have\\
+	$y^2=p_1+p_2$\\
+	$x_1^{2*}=\dfrac{p_1+p_2}{p_1}=1+\dfrac{p_2}{p_1}$ and $x_2^{2*}=0$\\\\
+	Our market clearing condition must hold and so\\
+	$x_1^1+x_1^2=e_1^1+e_1^2=1\Rightarrow0+1+\dfrac{p_2}{p_1}=1\Rightarrow\dfrac{p_2}{p_1}=0\Rightarrow p_2=0$\\
+	This would imply that $x_2^{1*}\rightarrow\infty$ and so we would violate our market clearing conditions.
+	\end{itemize}
+\pagebreak
+\item Now suppose that for some small $\varepsilon>0$, \begin{eqnarray*}
+	&&u^{1}(x_{1},x_{2})	=\varepsilon \ln(x_{1})+x_{2}\text{ and }\mathbf{e}^{1}=(\alpha,1),\\
+	&&u^{2}(x_{1},x_{2})	=x_{1}+\varepsilon \ln(x_{2})\text{ and }\mathbf{e}^{2}=(1,1).
+	\end{eqnarray*}
+	\begin{itemize}
+	\item[(a)] Derive each consumer's Marshallian demand functions.
+	\smallskip\\\\
+	For consumer 1, we have\\
+	$y^1=\alpha p_1+p_2=p_1x_1^1+p_2x_2^1$\\
+	$MRS_{12}^1=\dfrac{\varepsilon}{x_1^1}=\dfrac{p_1}{p_2}\Rightarrow x_1^{1*}=\varepsilon\dfrac{p_2}{p_1}\Rightarrow x_2^{1*}=\alpha\dfrac{p_1}{p_2}+1-\varepsilon$\\\\
+	For consumer 2, we have\\
+	$y^2=p_1+p_2=p_1x_1^2+p_2x_2^2$\\
+	$MRS_{12}^2=\dfrac{x_2^2}{\varepsilon}=\dfrac{p_1}{p_2}\Rightarrow x_2^{2*}=\varepsilon\dfrac{p_1}{p_2}\Rightarrow x_1^{2*}=1+\dfrac{p_2}{p_1}-\varepsilon$\\\\
+	\item[(b)] Show that a Walrasian equilibrium always exists, whether $\alpha>0$ or $\alpha=0$. Express the equilibrium allocation and the equilibrium price as a function of $\alpha$ and $\varepsilon$.
+	\smallskip\\\\
+	Our market clearing condition must hold so\\
+	$x_2^1+x_1^2=e_2^1+e_2^2=2\Rightarrow\alpha\dfrac{p_1}{p_2}+1-\varepsilon+\varepsilon\dfrac{p_1}{p_2}=2\Rightarrow\dfrac{p_1}{p_2}=\dfrac{1+\varepsilon}{1+\alpha}$\\\\
+	As $\dfrac{p_1}{p_2}=\dfrac{1+\varepsilon}{1+\alpha}$ is well defined even if $\alpha=0$, our equilibrium must always exist.
+	\end{itemize}
+\end{enumerate}
+
+\end{document}
+

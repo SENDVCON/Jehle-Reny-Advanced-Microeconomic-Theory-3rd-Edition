@@ -1,0 +1,129 @@
+\documentclass[11pt]{article}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+\usepackage{multirow}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S14.2\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\begin{enumerate}
+
+\item Consider an exchange economy with two goods and two consumers, with
+ 	\begin{equation*}
+	u^{1}(x_{1},x_{2})=x_{1}^{1/2}x_{2}^{1/2}\text{ and }u^{2}(x_{1},x_{2})=x_{1}^{1/2}+x_{2}^{1/2}.
+	\end{equation*}
+	Total endowments are $(10,10)$.
+	\begin{itemize}
+	\item[(a)] Suppose that a social planner wants to allocate goods to maximize consumer 1's utility while holding consumer 2's utility at $u^{2}(x_{1}^{2},x_{2}^{2})=4$. Find the assignment of goods to consumers that solves the planner's problem.
+	\smallskip\\\\
+	For consumer 2, we have\\
+	$MRS_{12}^2=\dfrac{(x_2^2)^{1/2}}{(x_1^2)^{1/2}}$\\
+	$u^2(x_1,x_2)=(x_1^2)^{1/2}+(x_2^2)^{1/2}=4$\\\\
+	For consumer 1, we have\\
+	$MRS_{12}^1=\dfrac{x_2^1}{x_1^1}$\\\\
+	At equilibrium, we must have\\
+	$MRS_{12}^1=MRS_{12}^2\Rightarrow\dfrac{x_2^1}{x_1^1}=\dfrac{(x_2^2)^{1/2}}{(x_1^2)^{1/2}}$\\
+	Since $e_1=e_2$, we must have\\
+	$\Rightarrow x_1^{2*}=x_2^{2*}\Rightarrow\textbf{x}^{2*}=(4,4)$\\\\
+	Our market clearing conditions must hold\\
+	$x_1^{1*}+x_1^{2*}=e_1=10$\\
+	$x_2^{1*}+x_2^{2*}=e_2=10$\\
+	$\Rightarrow\textbf{x}^{1*}=(6,6)$\\
+	\item[(b)] Suppose that the planner just divides the endowments so that $\mathbf{e}^{1}=(10,2)$ and $\mathbf{e}^{2}=(0,8)$ and then lets the consumers transact through perfectly competitive markets. Find the Walrasian equilibrium and show that the WEA is the same as the solution in part (a).
+	\smallskip\\\\
+	For consumer 1, we have\\
+	$y^1=10p_1+2p_2$\\
+	$MRS_{12}^1=\dfrac{x_2^1}{x_1^1}=\dfrac{p_1}{p_2}$
+	$\Rightarrow x_1^{1*}=\dfrac{10p_1+2p_2}{2p_1}=5+\dfrac{p_2}{p_1}\Rightarrow x_2^{1*}=\dfrac{10p_1+2p_2}{2p_2}=5\dfrac{p_1}{p_2}+1$\\\\
+	For consumer 2, we have\\
+	$y^2=8p_2$\\
+	$MRS_{12}^2=\dfrac{(x_2^2)^{1/2}}{(x_1^2)^{1/2}}=\dfrac{p1}{p2}\Rightarrow x_1^{2*}=\dfrac{8p_2^2}{p_1(p_1+p_2)}\Rightarrow x_2^{2*}=\dfrac{8p_1}{p_1+p_2}$\\\\
+	Our market clearing condition must hold\\
+    $x_2^{1*}+x_2^{2*}=e_2^1+e_2^2=2+8=10\Rightarrow5\dfrac{p_1}{p_2}+1+\dfrac{8p_1}{p_1+p_2}=10$\\
+	$\Rightarrow 5\dfrac{p_1^2}{p_2}+5p_1+8p_1=9p_1+9p_2$\\
+	$\Rightarrow 5(\dfrac{p_1}{p_2})^2+4\dfrac{p1}{p_2}-9=0$\\
+	We can solve for $\dfrac{p_1}{p_2}$ using quadratic formula\\
+	$\dfrac{p_1}{p_2}=\dfrac{-4+\sqrt{4^2-4(5)(-9)}}{2(5)}=\dfrac{-4+14}{10}=1\Rightarrow\textbf{x}^{1*}=(6,6)\Rightarrow\textbf{x}^{2*}=(4,4)$
+	\end{itemize}
+\pagebreak
+\item Consider an exchange economy with two goods and two consumers, with
+ 	\begin{equation*}
+	u^{1}(x_{1},x_{2})=x_{1}^{1/2}x_{2}^{1/2}\text{ and }u^{2}(x_{1},x_{2})=\min\{x_{1},x_{2}\}.
+	\end{equation*}
+	Total endowments are $(12,10)$.
+	\begin{itemize}
+	\item[(a)] Suppose that a social planner wants to allocate goods to maximize consumer 1's utility while holding consumer 2's utility at $u^{2}(x_{1}^{2},x_{2}^{2})=4$. Find the assignment of goods to consumers that solves the planner's problem.
+	\smallskip\\\\
+	For consumer 2, we have\\
+	$x_1^2=x_2^2$\\
+	$u^2(x_1,x_2)=min\{x_1^2,x_2^2\}=4\Rightarrow\textbf{x}^{2*}=(4,4)$\\\\
+	Our market clearing conditions must hold\\
+	$x_1^{1*}+x_1^{2*}=e_1=12$\\
+	$x_2^{1*}+x_2^{2*}=e_2=10$\\
+	$\Rightarrow\textbf{x}^{1*}=(8,6)$\\
+	\item[(b)] Suppose that the planner just divides the endowments so that $\mathbf{e}^{1}=(4,9)$ and $\mathbf{e}^{2}=(8,1)$ and then lets the consumers transact through perfectly competitive markets. Find the Walrasian equilibrium and show that the WEA is the same as the solution in part (a).
+	\smallskip\\\\
+	For consumer 1, we have\\
+	$y^1=4p_1+9p_2$\\
+	$MRS_{12}^1=\dfrac{x_2^1}{x_1^1}=\dfrac{p_1}{p_2}$
+	$\Rightarrow x_1^{1*}=\dfrac{4p_1+9p_2}{2p_1}=2+\dfrac{9}{2}\dfrac{p_2}{p_1}\Rightarrow x_2^{1*}=\dfrac{4p_1+9p_2}{2p_2}=2\dfrac{p_1}{p_2}+\dfrac{9}{2}$\\\\
+	For consumer 2, we have\\
+	$y^2=8p_1+p_2$
+	$x_1^2=x_2^2\Rightarrow x_1^{2*}=\dfrac{8p_1+p_2}{p_1+p_2}\Rightarrow x_2^{2*}=\dfrac{8p_1+p_2}{p_1+p_2}$\\\\
+	Our market clearing condition must hold\\
+    $x_2^{1*}+x_2^{2*}=e_2^1+e_2^2=9+1=10\Rightarrow2\dfrac{p_1}{p_2}+\dfrac{9}{2}+\dfrac{8p_1+p_2}{p_1+p_2}=10$\\
+    $\Rightarrow 4\dfrac{p_1^2}{p^2}+4p_1+16p_1+2p_2=11p_1+11p_2$\\
+    $\Rightarrow 4(\dfrac{p_1}{p^2})^2+9\dfrac{p_1}{p_2}-9=0$\\
+    We can solve for $\dfrac{p_1}{p_2}$ using quadratic formula\\
+	$\dfrac{p_1}{p_2}=\dfrac{-9+\sqrt{9^2-4(4)(-9)}}{2(4)}=\dfrac{-9+15}{8}=\dfrac{3}{4}\Rightarrow\textbf{x}^{1*}=(8,6)\Rightarrow\textbf{x}^{2*}=(4,4)$
+	\end{itemize}
+\end{enumerate}
+
+\end{document}
+

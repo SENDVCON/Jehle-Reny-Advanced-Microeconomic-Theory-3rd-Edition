@@ -1,0 +1,101 @@
+\documentclass[11pt]{article}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S08.2\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\medskip
+\begin{enumerate}
+\item Suppose that a firm's production function is given by $f(x_{1},x_{2})=x_{1}^{1/2}x_{2}^{1/2}$.
+	\begin{itemize}
+	\item[(a)] Find the firm's conditional input demand functions, $x_{1}(\mathbf{w},y)$ and $x_{2}(\mathbf{w},y)$.
+	\medskip\\
+	$$MP_i(\textbf{x})=\dfrac{\partial}{\partial x_i}f(\textbf{x})$$
+	$$MRTS_{ij}(\textbf{x})=\dfrac{MP_i(\textbf{x})}{MP_j(\textbf{x})}$$
+	$$\text{(at equilibrium) }MRTS_{ij}(\textbf{x})=\dfrac{w_i}{w_j}$$
+	$MRTS_{12}(\textbf{x})=\dfrac{x^2}{x^1}=\dfrac{w^1}{w^2}$\\
+	$y=f(x_1,x_2)=x_1^{1/2}x_2{1/2}\Rightarrow y=x_1^{1/2}(\dfrac{w1}{w2}x_1)^{1/2}\Rightarrow x_1(\textbf{w},y)=y\dfrac{w_2^{1/2}}{w_1^{1/2}}$\\
+	$y=f(x_1,x_2)=x_1^{1/2}x_2{1/2}\Rightarrow y=(\dfrac{w2}{w1}x_2)^{1/2}x_2^{1/2}\Rightarrow x_2(\textbf{w},y)=y\dfrac{w_1^{1/2}}{w_2^{1/2}}$\\
+	\item[(b)] Derive the firm's cost function $c(\mathbf{w},y)$.
+	\medskip\\
+	$$c(\textbf{w},y)=\sum_{i=1}^nw_ix_i(\textbf{w},y)$$
+	$c(\textbf{w},y)=w_1x_1(\textbf{w},y)+w_2x_2(\textbf{w},y)=yw_2^{1/2}w_1^{1/2}+yw_1^{1/2}w_2^{1/2}=2yw_1^{1/2}w_2^{1/2}$
+	\item[(c)] Apply Shephard's lemma to $c(\mathbf{w},y)$ and show that the resulting solutions coincide with those in (a).
+	\medskip\\
+	$$\dfrac{\partial}{\partial w_i}c(\textbf{w},y)=x_i(\textbf{w},y)$$
+	$\dfrac{\partial}{\partial w_1}c(\textbf{w},y)=y\dfrac{w_2^{1/2}}{w_1^{1/2}}=x_1(\textbf{w},y)$\\
+	$\dfrac{\partial}{\partial w_2}c(\textbf{w},y)=y\dfrac{w_1^{1/2}}{w_2^{1/2}}=x_2(\textbf{w},y)$\\
+	\end{itemize}
+\pagebreak
+\item For the production function $f(x_{1},x_{2})=x_{1}^{1/4}x_{2}^{1/2}$, derive the corresponding input demand functions, $x_{1}(\mathbf{w},y)$ and $x_{2}(\mathbf{w},y)$ and cost function $c(\mathbf{w},y)$ (observe that the solutions can be written as $\mathbf{x}(\mathbf{w},y)=y^{4/3}\mathbf{x}(\mathbf{w},1)$ and $c(\mathbf{w},y)=y^{4/3}c(\mathbf{w},1)$).
+\medskip\\
+$MRTS_{12}(\textbf{x})=\dfrac{1}{2}\dfrac{x_2}{x_1}=\dfrac{w_1}{w_2}$\\\\
+$y=f(x_1,x_2)=x_1^{1/4}x_2^{1/2}\Rightarrow y=x_1^{1/4}(\dfrac{2w_1}{w_2}x_1)^{1/2}\Rightarrow x_1(\textbf{w},y)=y^{4/3}(\dfrac{w_2}{2w_1})^{2/3}$\\\\
+$y=f(x_1,x_2)=x_1^{1/4}x_2^{1/2}\Rightarrow y=(\dfrac{w_2}{2w_1}x_2)^{1/4}x_2^{1/2}\Rightarrow x_2(\textbf{w},y)=y^{4/3}(\dfrac{2w_1}{w_2})^{1/3}$\\\\
+$c(\textbf{w},y)=w_1x_1(\textbf{w},y)+w_2x_2(\textbf{w},y)=
+\dfrac{1}{2}y^{4/3}w_2^{2/3}w_1^{1/3}+2y^{4/3}w_1^{1/3}w_2^{2/3}=\dfrac{5}{2}y^{4/3}w_1^{1/3}w_2^{2/3}$\\\\
+If $f(\textbf{x})$ is homogeneous of degree $\alpha$, then the corresponding cost function is multiplicatively separable $c(\textbf{w},y)=y^{1/\alpha}c(\textbf{w},1)$\\
+It is clear to see that $f(\textbf{x})$ is homogeneous of degree $\dfrac{3}{4}$\\
+$c(\textbf{w},y)=y^{4/3}c(\textbf{w},1)$\\ 
+\item Derive the production function $f(x_{1},x_{2})$ that rationalizes the cost function
+$$c(\mathbf{w},y)=2\sqrt{w_{1}w_{2}}y-w_{2}$$.
+\medskip\\ 
+By definition of our objective function, we have\\
+$w_1x_1+w_2x_2\geq2\sqrt{w_1w_2}y-w_2$\\\\
+$\Rightarrow \dfrac{w_1x_1+w_2x_2+w_2}{2\sqrt{w_1w_2}}\geq y$\\\\
+$\Rightarrow \dfrac{1}{2}(\dfrac{w_1}{w_2})^{1/2}x_1+\dfrac{1}{2}(\dfrac{w_2}{w_1})^{1/2}(x_2+1)\geq y$\\\\
+We want to minimize this with respect to $Z=(\frac{w_1}{w_2})^{1/2}$ and thus we have the first order condition\\
+$\dfrac{\partial}{\partial Z}\dfrac{1}{2}Zx_1+\dfrac{1}{2}Z^{-1}(x_2+1)=\dfrac{1}{2}x_1-\dfrac{1}{2}(x_2+1)Z^{-2}=0\Rightarrow Z=(\dfrac{x_2+1}{x_1})^{1/2}$\\\\
+$\Rightarrow \dfrac{1}{2}(\dfrac{x_2+1}{x_1})^{1/2}x_1+\dfrac{1}{2}(\dfrac{x_1}{x_2+1})^{1/2}(x_2+1)=y\Rightarrow y=x_1^{1/2}(x_2+1)^{1/2}$\\\\
+And so we have the production function\\
+$f(x_1,x_2)=x_1^{1/2}(x_2+1)^{1/2}$
+\end{enumerate}
+\end{document}
+

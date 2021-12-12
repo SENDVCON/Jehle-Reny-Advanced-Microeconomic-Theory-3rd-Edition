@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S08.1\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\medskip
+\begin{enumerate}
+\item For each of the following production functions, derive $MP_{1}(\mathbf{x})$, $AP_{1}(\mathbf{x})$, $\mu_{1}(\mathbf{x})$ (output elasticity), $MRTS_{12}(\mathbf{x})$, and $\sigma_{12}(4,4)$ (elasticity of substitution when $x_{1}=x_{2}=4$).
+	\begin{itemize}
+	\item[(a)] $f(x_{1},x_{2})=x_{1}^{\alpha}x_{2}^{1-\alpha}$ for $\alpha\in(0,1)$
+	\medskip\\
+	$$MP_i(\textbf{x})=\dfrac{\partial}{\partial x_i}f(\textbf{x})$$
+	$$AP_i(\textbf{x})=\dfrac{f(\textbf{x})}{x_i}$$
+	$$\mu_i(\textbf{x})=\dfrac{MP_i(\textbf{x})}{AP_i(\textbf{x})}$$
+	$$MRTS_{ij}(\textbf{x})=\dfrac{MP_i(\textbf{x})}{MP_j(\textbf{x})}$$
+	$$\sigma{ij}\textbf{x})=\dfrac{\dfrac{\partial\dfrac{x_j}{x_i}}{\dfrac{x_j}{x_i}}}{\dfrac{\partial MRTS_{ij}(\textbf{x})}{MRTS_{ij}(\textbf{x})}}==\dfrac{1}{\dfrac{\partial MRTS_{ij}(\textbf{x})}{\partial\dfrac{x_j}{x_i} }}\dfrac{MRTS_{ij}(\textbf{x})}{\dfrac{x_j}{x_i}}$$
+	$MP_1(\textbf{x})=\alpha x_1^{\alpha-1}x_2^{1-\alpha}$\\
+	$MP_2(\textbf{x})=(1-\alpha)x_1^{\alpha}x_2^{-\alpha}$\\
+	$AP_1(\textbf{x})=x_1^{\alpha-1}x_2^{1-\alpha}$\\
+	$\mu_1(\textbf{x})=\alpha$\\
+	$MRTS_{12}(\textbf{x})=\dfrac{\alpha}{1-\alpha}\dfrac{x_2}{x_1}$\\
+	$\sigma_{12}(4,4)=\dfrac{1}{\dfrac{\alpha}{1-\alpha}}\dfrac{\dfrac{\alpha}{1-\alpha}}{1}=1$\\
+	\item[(b)] $f(x_{1},x_{2})=x_{1}^{1/2}(x_{1}^{1/2}+x_{2}^{1/2})$
+	\medskip\\
+	$MP_1(\textbf{x})=1+\dfrac{1}{2}\dfrac{x_2^{1/2}}{x_1^{1/2}}$\\
+	$MP_2(\textbf{x})=\dfrac{1}{2}\dfrac{x_1^{1/2}}{x_2^{1/2}}$\\
+	$AP_1(\textbf{x})=1+\dfrac{x_2^{1/2}}{x_1^{1/2}}$\\
+	$\mu_1(\textbf{x})=\dfrac{1+\dfrac{1}{2}\dfrac{x_2^{1/2}}{x_1^{1/2}}}{1+\dfrac{x_2^{1/2}}{x_1^{1/2}}}$\\
+	$MRTS_{12}(\textbf{x})=2\dfrac{x_2^{1/2}}{x_1^{1/2}}+\dfrac{x_2}{x_1}$\\
+	$\sigma_{12}(4,4)=\dfrac{1}{2}\dfrac{3}{1}=\dfrac{3}{2}$\\
+	\end{itemize}
+\item Determine whether each of the following production functions exhibits constant, increasing, or decreasing returns to scale.
+    \begin{itemize}
+    \item[(a)] $f(x_{1},x_{2})=x_{1}^{0.4}x_{2}^{0.7}$
+    \medskip\\
+    $f(t\textbf{x})=(tx_1)^{0.4}(tx_2)^{0.7}=t^{0.4}t^{0.7}x_1^{0.4}x_2^{0.7}=t^{1.1}x_1f(\textbf{x})$\\
+    $1.1>1\Rightarrow f(\textbf{x})$ has increasing returns to scale\\
+    \item[(b)] $f(x_{1},x_{2})=x_{1}+2x_{2}$.
+    \medskip\\
+    $f(t\textbf{x})=tx_1+2(tx_2)=t(x_1+2x_2)=tf(t\textbf{x})$\\
+    $1=1\Rightarrow f(\textbf{x})$ has constant returns to scale\\
+    \item[(c)] $f(x_{1},x_{2})=\min\{2x_{1},x_{2}\}$
+    \medskip\\
+    $f(t\textbf{x})=min\{tx_1,tx_2\}=tmin\{x_1,x_2\}=tf(t\textbf{x})$\\
+    $1=1\Rightarrow f(\textbf{x})$ has constant returns to scale\\
+    \item[(d)] $f(x_{1},x_{2},x_{3})=4x_{1}^{2/3}+x_{2}^{2/3}+2x_{3}^{2/3}$.
+    \medskip\\
+    $f(t\textbf{x})=4(tx_1)^{2/3}+(tx_2)^{2/3}+2(tx_3)^{2/3}=t^{2/3}(4(x_1)^{2/3}+(x_2)^{2/3}+2(x_3)^{2/3})=t^{2/3}f(t\textbf{x})$\\
+    $\dfrac{2}{3}<1\Rightarrow f(\textbf{x})$ has decreasing returns to scale\\
+    \end{itemize}
+\end{enumerate}
+\end{document}
+

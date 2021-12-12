@@ -1,0 +1,120 @@
+\documentclass[11pt]{article}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S09.2\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\begin{enumerate}
+\item Suppose that there are 24 identical firms in a perfectly competitive industry, each with the following CES production function: $f(x_{1},x_{2})=x_{1}^{1/2}+x_{2}^{1/2}$. In the short run, no firm can adjust input $2$, that is, $x_{2}$ is fixed. For 12 firms (say $A$ firms), $x_{2}=16$, while for the other 12 firms ($B$ firms), $x_{2}=25$. In addition, $w_{1}=w_{2}=2$, and the market demand curve is given by $q^{d}(p)=172-2p$.
+	\begin{itemize}
+	\item[(a)] Derive an individual A firm's short-run cost function $c^{A}(q)$ and output supply function $q^{A}(p)$. Note that an A firm can produce up to 4 even if $x_{1}=0$.
+	\medskip\\
+	For $A$ Firms, we have\\
+	$q=x_1^{1/2}+(16)^{1/2}\Rightarrow x_1(q)=(q-4)^2$\\
+	$c^A(q)=w_1x_1(q)+w_2x_2(q)=2(q-4)^2+2(16)=2q^2-16q+64$\\
+	$c^A'(q)=p\Rightarrow4q-16=p\Rightarrow q^A(p)=\dfrac{p+16}{4}$\\
+	\item[(b)] Derive an individual B firm's short-run cost function $c^{B}(q)$ and output short-run supply function $q^{B}(p)$.
+	\medskip\\
+	For $B$ firms, we have\\
+	$q=x_1^{1/2}+(25)^{1/2}\Rightarrow x_1(q)=(q-5)^2$\\
+	$c^B(q)=w_1x_1(q)+w_2x_2(q)=2(q-5)^2+2(25)=2q^2-20q+100$\\
+	$c^B'(q)=p\Rightarrow4q-20=p\Rightarrow q^B(p)=\dfrac{p+20}{4}$\\
+	\item[(c)] Compute the short-run market supply function $q^{s}(p)$.
+	\medskip\\
+	There are 12 $A$ firms and 12 $B$ firms\\
+	$q^s(p)=12q^A(p)+12q^B(p)=6p+108$\\
+	\item[(d)] Find the short-run perfectly competitive equilibrium.
+	\medskip\\
+	At equilibrium, we must have market clearing, the quantity supplied is equal to the quantity demanded\\
+	$q^s(p)=q^d(p)\Rightarrow6p+108=172-2p\Rightarrow p^*=8$\\
+	\item[(e)] Calculate each individual firm's equilibrium profit in (d).
+	\medskip\\
+    $q^A(p^*)=6\Rightarrow\pi_A=p^*\cdot q^A-c^A(q)=8(6)-(2(6)^2-16(6)+64)=8$\\
+    $q^B(p^*)=7\Rightarrow\pi_b=p^*\cdot q^B-c^B(q)=8(7)-(2(7)^2-20(7)+100)=-2$\\ 
+	\end{itemize}
+\pagebreak
+\item Consider a perfectly competitive market in which each firm's long-run cost function is given by $c(q)=q^{3}-20q^{2}+120q$ and the market demand curve is given by $q^{d}(p)=1000-10p$. Find the long-run perfectly competitive equilibrium (price, the number of operating firms, and each firm's output) in this market.
+    \medskip\\
+    In a perfectly competitive market, firms will maximize profit and new firms will enter until there is zero profit and so we have, $MC=AC=p$\\
+    At equilibrium, we must have market clearing, the total quantity supplied is equal to the total quantity demanded\\\\
+    To achieve competitive equilibrium (zero profit condition)\\
+    $MC=c'(q)=p\Rightarrow3q^2-40q+120=p$\\
+    $AC=\dfrac{c(q)}{q}=p\Rightarrow q^2-20q+120=p$\\
+    $MC=AC\Rightarrow 3q^2-40q+120=q^2-20q+120\Rightarrow 2q^2-20=0\Rightarrow q^*=10$\\
+    $p^*=p(q^*)=(10^2)-20(10)+120=20$\\\\
+    To achieve market clearing, let $n^*$ represetn the total number of operating firms in the market.\\
+    $q^d(p^*)=q^s=n^*q^*\Rightarrow=1000-10(20)=800=n^*(10)\Rightarrow n^*=80$\\
+\pagebreak
+\item Consider a monopoly firm with the CES production function $f(x_{1},x_{2})=x_{1}^{1/2}+x_{2}^{1/2}$. The input prices and market demand are given by $w_{1}=w_{2}=2$ and $q^{d}(p)=180-2p$.
+	\begin{itemize}
+	\item[(a)] Derive the firm's (long-run) cost function $c(q)$.
+    \medskip\\
+    $MRTS_12=\dfrac{x_2^{1/2}}{x_1^{1/2}}=\dfrac{w_1}{w_2}=1\Rightarrow x_1=x_2\Rightarrow x_1(q)=\dfrac{q^2}{4}\Rightarrow x_2(q)=\dfrac{q^2}{4}$\\
+    $c(q)=w_1x_1(q)+w_2x_2(q)=2\dfrac{q^2}{4}+2\dfrac{q^2}{4}=q^2$\\
+    \item[(b)] Find the monopoly market outcome (price, quantity, and profit).
+    \medskip\\
+    In a monopoly market, firms will profit maximize and so $MR=MC$.\\
+    At equilibrium, we must have market clearing, so $q^s=q^d$\\
+    $MC(q)=c'(q)=2q$\\
+    $q^d(p)=180-2p\Rightarrow p(q)=\dfrac{180-q}{2}$\\
+    $r(q)=q\cdot p(q)=90q-\dfrac{q^2}{2}$\\
+    $MR(q)=r'(q)=90-q$\\
+    $MR=MC\Rightarrow2q=90-q\Rightarrow q^*=30\Rightarrow p^*=75$\\
+    $\pi(q^*)=r(q^*)-c(q^*)=90(30)-\dfrac{(30)^2}{2}-(30)^2=1350$\\
+    \item[(c)] Compute the monopoly firm's Lerner index in (b).
+    \medskip\\
+    $$\text{Lerner Index}=\dfrac{p^*-MC(q^*)}{p^*}$$
+    $MC(q^*)=2(30)=60$\\
+    $LI=\dfrac{p^*-MC(q^*)}{p^*}=\dfrac{75-60}{75}=\dfrac{1}{5}$\\
+    \end{itemize}
+\end{enumerate}
+\end{document}

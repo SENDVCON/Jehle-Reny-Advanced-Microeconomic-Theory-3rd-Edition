@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S09.1\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\begin{enumerate}
+\item Consider the following production function and input prices: $f(x_{1},x_{2})=x_{1}^{1/4}x_{2}^{1/4}$, and $w_{1}=w_{2}=2$.
+	\begin{itemize}
+	\item[(a)] Find the firm's input demand functions, $x_{1}(p)$ and $x_{2}(p)$.
+	\medskip\\
+	$$MRTS_{ij}=\dfrac{w_i}{w_j}$$
+    $$MRP_i=p\cdot MP_i=w_i$$
+    $MRTS_{12}=\dfrac{x_2}{x_1}=\dfrac{w_1}{w_2}=\dfrac{2}{2}=1\Rightarrow x_1(p)=x_2(p)$\\
+	$MRP_1=w_1\Rightarrow\dfrac{1}{4}px_1^{-3/4}x_2^{1/4}=2\Rightarrow x_1(p)=\dfrac{1}{64}p^2$\\
+	$MRP_2=w_2\Rightarrow\dfrac{1}{4}px_1^{1/4}x_2^{-3/4}=\Rightarrow x_2(p)=\dfrac{1}{64}p^2$\\
+	\item[(b)] Find the firm's output supply function, $y(p)$, and profit function, $\pi(p)$.
+	\medskip\\
+	$$y(p)=f(x_1(p),x_2(p))$$
+	$$c(p)=w_1x_1(p)+w_2x_2(p)$$
+	$$\pi(p)=p\cdot y(p)-c(p)$$
+	$y(p)=(x_1(p))^{1/4}(x_2(p))^{1/4}=\dfrac{1}{8}p$\\
+	$c(p)=w_1x_1(p)+w_2x_2(p)=2\dfrac{1}{64}p^2+2\dfrac{1}{64}p^2=\dfrac{1}{16}p^2$\\
+	$\pi(p)=p\cdot y(p)-c(p)=\dfrac{1}{8}p^2-\dfrac{1}{16}p^2=\dfrac{1}{16}p^2$
+	\item[(c)] Find the firm's conditional input demand functions, $x_{1}(y)$ and $x_{2}(y)$, and cost function $c(y)$.
+	\medskip\\
+	$$c(y)=w_1x_1(y)+w_2x_2(y)$$
+	$MRTS_{12}=\dfrac{x_2}{x_1}=\dfrac{w_1}{w_2}=\dfrac{2}{2}=1\Rightarrow x_1(y)=x_2(y)\Rightarrow x_1(y)=y^2\Rightarrow x_2(y)=y^2$\\
+	$c(y)=w_1x_1(y)+w_2x_2(y)=2y^2+2y^2=4y^2$\\
+    \item[(d)] Using $c(y)$ in (c), find the firm's output supply function, $y(p)$ and profit function $\pi(p)$ (again).
+    \medskip\\
+    Firms will maximize profit and so $MR=MC$\\
+    In perfect competition, new firms will enter until there is zero profit and so $MC=p$
+    $$MC=p\Rightarrow c'(y)=p$$
+    $c'(y)=8y=p\Rightarrow y(p)=\dfrac{1}{8}p$\\
+    $c(p)=w_1x_1(p)+w_2x_2(p)=2\dfrac{1}{64}p^2+2\dfrac{1}{64}p^2=\dfrac{1}{16}p^2$\\
+    $\pi(p)=p\cdot y(p)-c(p)=\dfrac{1}{8}p^2-\dfrac{1}{16}p^2=\dfrac{1}{16}p^2$
+	\end{itemize}
+
+\item Suppose that a firm has constant returns-to-scale Cobb-Douglas technology $f(x_{1},x_{2})=x_{1}^{2/3}x_{2}^{1/3}$ and the input prices are given as $w_{1}=4$ and $w_{2}=2$.
+    \begin{itemize}
+    \item[(a)] Suppose that in the short-run, $x_{2}$ is fixed at $8$. Derive the firm's conditional input demand $x_{1}(y)$ and short-run cost function, $sc(y)$.
+    \medskip\\
+    $y=x_1^{2/3}(8)^{1/3}\Rightarrow x_1(y)=(\dfrac{y}{2})^{3/2}$\\
+    $sc(y)=w_1x_1(y)+w_2x_2(y)=4(\dfrac{y}{2})^{3/2}+2(8)=2^{1/2}y^{3/2}+16$
+    \item[(b)] Derive the firm's short-run output supply function, $y(p)$, and find the condition on $p$ under which its short-run profit is positive.
+    \medskip\\
+    $sc'(y)=p\Rightarrow\dfrac{3}{2}2^{1/2}y^{1/2}=p\Rightarrow y(p)=\dfrac{2}{9}p^2$
+    \item[(c)] Derive the firm's long-run cost function, $c(y)$.
+    \medskip\\
+    $MRTS_{12}=\dfrac{2x_2}{x_1}=\dfrac{w_1}{w_2}=2\Rightarrow x_1=x_2\Rightarrow x_1(y)=y\Rightarrow x_2(y)=y$\\
+    $c(y)=w_1x_1(y)+w_2x_2(y)=4y+2y=6y$\\
+    \item[(d)] Derive the firm's long-run output supply function, $y(p)$.
+    \medskip\\
+    $c'(y)=p\Rightarrow6=p$\\
+    Here we have constant marginal cost and so,
+    \begin{equation*}
+            y(p)=\begin{cases}
+            \infty & p>6\\
+            \mathbf{R}_+ & p=6\\
+            0 & p<6\\
+            \end{cases}
+        \end{equation*}
+    \end{itemize}
+\end{enumerate}
+\end{document}
+

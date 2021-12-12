@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S12.1\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\begin{enumerate}
+\item Consider an exchange economy with two goods and two consumers. Preferences and endowments are described by
+ 	\begin{eqnarray*}
+	&&u^{1}(x_{1},x_{2})	=x_{1}^{1/2}x_{2}^{1/2}\text{ and }\mathbf{e}^{1}=(2,2),\\
+	&& u^{2}(x_{1},x_{2})=x_{1}^{2/3}x_{2}^{1/3}\text{ and }\mathbf{e}^{2}=(2,2),\text{ respectively.}
+	\end{eqnarray*}
+	\begin{itemize}
+	\item[(a)] Derive the set of all Pareto efficient allocations. Determine whether each of the following allocations is Pareto efficient or not:\\\\
+	(i) $\mathbf{x}^{1}=\mathbf{x}^{2}=(2,2)$,\\
+	(ii) $\mathbf{x}^{1}=(1,8/5)$, $\mathbf{x}^{2}=(3,11/5)$,\\
+	(iii) $\mathbf{x}^{1}=(3,24/7)$, $\mathbf{x}^{2}=(1,4/7)$.
+	\smallskip\\\\
+	For Pareto efficiency, we must satisfy our equilibrium condition
+	$$MRS_{12}^p=MRS_{12}^q\text{ for all }p,q$$
+	and our market clearing condition
+	$$\sum_{j=1}^nx_i^j=\sum_{j=1}^ne_i^j\text{ for all }i$$
+	Given our consumer's preferences, we have\\
+	$MRS_{12}^1=\dfrac{x_2^1}{x_1^1}$\\
+	$MRS_{12}^2=\dfrac{2x_2^2}{x_1^2}$\\\\
+	(i) $MRS_{12}^1=1\neq MRS_{12}^2=2$ and so this fails our equilibrium condition.\\\\
+	(ii) $x_2^1+x_2^2=\dfrac{8}{5}+\dfrac{11}{5}=\dfrac{19}{5}\neq e_2^1+e_2^2=4$ and so this fails our market clearing condition.\\\\
+	(iii) $MRS_{12}^1=\dfrac{1}{3}=MRS_{12}^2=\dfrac{1}{3}$\\
+	$x_1^1+x_1^2=3+1=4$ and $x_2^1+x_2^2=\dfrac{24}{7}+\dfrac{4}{7}=4$\\
+	As this satisfies both of our equilibrium and market clearing conditions, this is allocation is Pareto efficient.\\\\
+	\item[(b)] If consumer 2 has all bargaining power, what will be the resulting allocation? In other words, solve the following problem:
+	\begin{equation*}
+	\max_{x_{1}^{2},x_{2}^{2}}u^{2}(\mathbf{x}^{2})=(x_{1}^{2})^{2/3}(x_{2}^{2})^{1/3}\text{ subject to }u^{1}(\mathbf{x}^{1})\geq u^{1}(\mathbf{e}^{1})=2,~\mathbf{x}^{1}+\mathbf{x}^{2}=\mathbf{e}^{1}+\mathbf{e}^{2}=(4,4).
+	\end{equation*}
+	\smallskip\\\\
+	For consumer 1, we have\\
+	Initial endowment $e^1=(2,2)$ and initial utility $u^1(2,2)=2$\\
+	(1) $\Rightarrow u^1(x_1^1,x_2^2)=(x_1^1)^{1/2}(x_2^1)^{1/2}=2\Rightarrow x_1^1x_2^1=4$\\
+	$MRS_{12}^1=\dfrac{x_2^1}{x_1^1}$\\\\
+	For consumer 2, we have\\
+	$MRS_{12}^2=\dfrac{2x_2^2}{x_1^2}$\\\\
+	At equilibrium, we must have\\
+	(2) $MRS_{12}^1=MRS_{12}^2\Rightarrow\dfrac{x_2^1}{x_1^1}=\dfrac{2x_2^2}{x_1^2}$\\\\
+	Our market clearing condition must hold\\
+	(3) $\Rightarrow x_1^1+x_1^2=e_1^1+e_1^2=4$\\
+	(3) $\Rightarrow x_2^1+x_2^2=e_2^1+e_2^2=4$\\\\
+	
+	Thus, we have\\
+	From (2) $\Rightarrow x_1^2x_2^1=2x_1^1x_2^2$\\
+	From (3) $\Rightarrow (4-x_1^1)x_2^1=2x_1^1(4-x_2^1)\Rightarrow4x_2^1-x_1^1x_2^1=8x_1^1-2x_1^1x_2^1$\\\
+	From (1) $\Rightarrow4x_2^1-4=8x_1^1-8\Rightarrow4x_2^1-8x_1^1+4=0\Rightarrow 4(x_2^1)^2-8x_1^1x_2^1+4x_2^1=0$\\
+	$\Rightarrow4(x_2^1)^2+4x_2^1-32=0$\\\\
+	We can solve this quadratic equation with the quadratic formula\\\\ $\Rightarrow x_2^{1*}=\dfrac{-4+\sqrt{4^2-4(4)(-32)}}{2(4)}=\dfrac{-1+\sqrt{33}}{2}$\\
+	$\Rightarrow x_1^{1*}=\dfrac{4}{\dfrac{-1+\sqrt{33}}{2}}=\dfrac{8(1+\sqrt{33}}{32}=\dfrac{1+\sqrt{33}}{4}$\\
+	$\Rightarrow x_1^{2*}=\dfrac{15-\sqrt{33}}{4}\Rightarrow x_2^{2*}=\dfrac{9-\sqrt{33}}{2}$\\
+	\item[(c)] Derive consumer 1's Marshallian demand functions.
+	\smallskip\\\\
+	For consumer 1, we have\\
+	$y^1=2p_1+2p_2=p_1x_1^1+p_2x_2^1$\\
+	$MRS_{12}^1=\dfrac{x_2^1}{x_1^1}=\dfrac{p_1}{p_2}\Rightarrow x_1^{1*}=\dfrac{2p_1+2p_2}{2p_1}\Rightarrow x_2^{1*}=\dfrac{2p_1+2p_2}{2p_2}$\\\\
+	\item[(d)] Derive consumer 2's Marshallian demand functions.
+	\smallskip\\\\
+	For consumer 2, we have\\
+	$y^2=2p_1+2p_2=p_1x_1^2+p_2x_2^2$\\
+	$MRS_{12}^2=\dfrac{2x_2^2}{x_1^2}=\dfrac{p_1}{p_2}\Rightarrow x_1^{2*}=\dfrac{2(2p_1+2p_2)}{3p_1}\Rightarrow x_2^{2*}=\dfrac{2p_1+2p_2}{3p_2}$\\\\
+	\item[(e)] Find a Walrasian equilibrium for this economy and its associated WEA.
+	\smallskip\\\\
+	Our market clearing condition must hold\\
+	$x_2^1+x_2^2=e_2^1+e_2^2\Rightarrow\dfrac{2p_1+2p_2}{2p_2}+\dfrac{2p_1+2p_2}{3p_2}=4\Rightarrow\dfrac{5}{3}\dfrac{p_1}{p_2}=\dfrac{7}{3}\Rightarrow\dfrac{p_1}{p_2}=\dfrac{7}{5}$\\
+	$\Rightarrow\textbf{x}^{1*}=(\dfrac{12}{7},\dfrac{12}{5})\Rightarrow\textbf{x}^{2*}=(\dfrac{16}{7},\dfrac{8}{5})$
+	\end{itemize}
+\pagebreak
+\item (Scarf) An exchange economy has three consumers and three goods. Consumers' utility functions and initial endowments are as follows:
+	\begin{eqnarray*}
+	u^{1}(x_{1},x_{2},x_{3})&=&\min(x_{1},x_{2})\text{ and }\mathbf{e}^{1}=(1,0,0),\\
+	u^{2}(x_{1},x_{2},x_{3})&=&\min(x_{2},x_{3})\text{ and }\mathbf{e}^{2}=(0,1,0),\\
+	u^{3}(x_{1},x_{2},x_{3})&=&\min(x_{1},x_{3})\text{ and }\mathbf{e}^{3}=(0,0,1).	
+	\end{eqnarray*}
+	Find a Walrasian equilibrium and the associated WEA for this economy.\\\\
+    For consumer 1, we have\\
+    $y^1=p_1$\\
+    $x_3^{1*}=0$\\
+    $x_1^1=x_2^1\Rightarrow x_1^{1*}=\dfrac{p_1}{p_1+p_2}\Rightarrow x_2^{1*}=\dfrac{p_1}{p_1+p_2}$\\\\
+    For consumer 2, we have\\
+    $y^2=p_2$\\
+    $x_1^{2*}=0$\\
+    $x_2^2=x_3^2\Rightarrow x_2^{2*}=\dfrac{p_2}{p_2+p_3}\Rightarrow x_3^{2*}=\dfrac{p_2}{p_2+p_3}$\\\\
+    For consumer 3, we have\\
+    $y^3=p_3$\\
+    $x_2^{3*}=0$\\
+    $x_1^3=x_3^3\Rightarrow x_1^{3*}=\dfrac{p_3}{p_1+p_3}\Rightarrow x_3^{3*}=\dfrac{p_3}{p_1+p_3}$\\\\
+    Our market clearing condition must hold and so\\
+    $\sum_{j=1}^nx_i^j=\sum_{j=1}^ne_i^j$\\
+    It is clear from symmetry that we would have $p_1=p_2=p_3$\\
+    $\Rightarrow\textbf{x}^{1*}=(\dfrac{1}{2},\dfrac{1}{2},0)\Rightarrow\textbf{x}^{2*}=(0,\dfrac{1}{2},\dfrac{1}{2})\Rightarrow\textbf{x}^{3*}=(\dfrac{1}{2},0,\dfrac{1}{2})$
+\end{enumerate}
+
+\end{document}
+

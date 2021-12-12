@@ -1,0 +1,110 @@
+%\documentclass[11pt]{article}
+%\usepackage{sw20jart}
+%\input{tcilatex}
+
+
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+%\usepackage{fourier}
+%\usepackage{microtype}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, October 28, 2003 22:56:16}
+%TCIDATA{LastRevised=Monday, July 26, 2010 20:08:50}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="General\Andy-paper">}
+%TCIDATA{Language=American English}
+%TCIDATA{CSTFile=LaTeX article (bright).cst}
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S11.1\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\medskip
+\begin{enumerate}
+\item Suppose that there are two firms, $A$ and $B$, in an industry with inverse market demand: $p=12-(q_{A}+q_{B})$, where $q_{i}$ represents firm $i$'s quantity supply for $i=A,B$. Firm $A$'s cost function is given by $c_{A}(q_{A})=q_{A}$, while firm $B$'s is given by $c_{B}(q_{B})=2q_{B}$.
+	\begin{itemize}
+	\item[(a)] Find firm $B$'s best response to firm $A$'s quantity choice $q_{A}\in[0,10]$. In other words, given $q_{A}$, what value of $q_{B}$ maximizes firm $B$'s profit?
+	\smallskip\\\\
+	Firm $B$ takes firm $A$'s quantity as given and maximizes
+	$$\pi_B=q_B\cdot p(q_B)-c_B(q_B)=(10-q_A)q_B-q_B^2$$
+	$$\Rightarrow\dfrac{\partial}{\partial q_B}\pi_B=10-q_A-2q_B=0\Rightarrow q_B=\dfrac{10-q_A}{2}$$
+	\item[(b)] Find firm $A$'s best response to firm $B$'s quantity $q_{B}\in[0,11]$.
+	\smallskip\\\\
+	Firm $A$ takes firm $B$'s quantity as given and maximizes
+	$$\pi_A=q_A\cdot p(q_A)-c_A(q_A)=(11-q_B)q_A-q_A^2$$
+	$$\Rightarrow\dfrac{\partial}{\partial q_A}\pi_A=11-q_B-2q_A=0\Rightarrow q_A=\dfrac{11-q_B}{2}$$
+	\item[(c)] Suppose that the two firms engage in Cournot competition. Find the Cournot equilibrium $(q_{A},q_{B})$. Calculate each firm's profit.
+	\smallskip\\\\
+	If the two firms engage in Cournot competition, in equilibrium we have\\
+	$$q_A=\dfrac{11-q_B}{2}\text{ and }q_B=\dfrac{10-q_A}{2}$$
+	$$\Rightarrow q_A=\dfrac{11-5+\dfrac{q_A}{2}}{2}\Rightarrow q_A=4\Rightarrow q_B=3$$
+	$$\Rightarrow p*=5\Rightarrow\pi_A=16\Rightarrow\pi_B=9$$
+	\item[(d)] Now suppose that the two firms engage in Stackelberg competition. Find the Stackelberg equilibrium $(q_{A},q_{B}(\cdot))$ when firm $A$ moves first. Calculate each firm's equilibrium profit.
+	\smallskip\\\\
+	Firm $B$ takes firm $A$'s quantity as given and so \emph{from part (a)}
+	$$q_B=\dfrac{10-q_A}{2}$$
+	Firm $A$ consider's firm $B$'s consequent response and maximizes
+	$$\pi_A=q_A\cdot p(q_A,q_B(q_A))-c_A(q_A)=q_A(12-(q_A+\dfrac{10-q_A}{2})-q_A=6q_A-\dfrac{1}{2}q_A^2$$
+	$$\Rightarrow\dfrac{\partial}{\partial q_A}\pi=6-q_A=0\Rightarrow q_A=6\Rightarrow q_B=2\Rightarrow p*=4\Rightarrow\pi_A=18\Rightarrow\pi_B=4$$
+	\item[(e)] Find the Stackelberg equilibrium $(q_{B},q_{A}(\cdot))$ when firm $B$ moves first. Calculate each firm's equilibrium profit.
+	\smallskip\\\\
+	Firm $A$ takes firm $B$'s quantity as given and so \emph{from part (b)}
+	$$q_A=\dfrac{11-q_B}{2}$$
+	Firm $B$ consider's firm $A$'s consequent response and maximizes
+	$$\pi_B=q_B\cdot p(q_A(q_B),q_B)-c_B(q_B)=q_B(12-(\dfrac{11-q_B}{2}+q_B)-2q_B=\dfrac{9}{2}q_B-\dfrac{1}{2}q_B^2$$
+	$$\Rightarrow\dfrac{\partial}{\partial q_A}\pi=\dfrac{9}{2}-q_B=0\Rightarrow q_B=\dfrac{9}{2}\Rightarrow q_A=\dfrac{13}{4}\Rightarrow p*=\dfrac{17}{4}\Rightarrow\pi_A=\dfrac{169}{16}\Rightarrow\pi_B=\dfrac{81}{8}$$
+	\end{itemize}
+\end{enumerate}
+
+\end{document}
+

@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+
+\setcounter{MaxMatrixCols}{10}
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S12.2\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\begin{enumerate}
+\item Consider an exchange economy with two goods and two consumers. Preferences and endowments are described by
+ 	\begin{eqnarray*}
+	&&u^{1}(x_{1},x_{2})	=x_{1}^{1/2}x_{2}^{1/2}\text{ and }\mathbf{e}^{1}=(4,1),\\
+	&& u^{2}(x_{1},x_{2})=x_{1}^{1/2}+x_{2}^{1/2}\text{ and }\mathbf{e}^{2}=(2,2),\text{ respectively.}
+	\end{eqnarray*}
+	\begin{itemize}
+	\item[(a)] Derive consumer 1's Marshallian demand functions.
+	\smallskip\\\\
+	$y^1=4p_1+p_2=p_1x_1^1+p_2x_2^1$\\
+	$MRS_{12}^1=\dfrac{x_2^1}{x_1^1}=\dfrac{p_1}{p_2}\Rightarrow x_1^{1*}=\dfrac{4p_1+p_2}{2p_1}=2+\dfrac{1}{2}\dfrac{p_2}{p_1}\Rightarrow x_2^{1*}=\dfrac{4p_1+p_2}{2p_2}=2\dfrac{p_1}{p_2}+\dfrac{1}{2}$\\
+	\item[(b)] Derive consumer 2's Marshallian demand functions.
+	\smallskip\\\\
+	$y^2=2p_1+2p_2=p_1x_1^2+p_2x_2^2$\\
+	$MRS_{12}^2=\dfrac{(x_2^2)^{1/2}}{(x_1^2)^{1/2}}=\dfrac{p_1}{p_2}\Rightarrow x_1^{2*}=\dfrac{p_2(2p_1+2p_2)}{p_1(p_1+p_2)}=\dfrac{2p_2}{p_1}\Rightarrow x_2^{2*}=\dfrac{p_1(2p_1+2p_2)}{p_2(p_1+p_2)}=\dfrac{2p_1}{p_2}$\\
+	\item[(c)] Compute the aggregate excess demand function for each good, $z_{1}(\mathbf{p})$ and $z_{2}(\mathbf{p})$, and verify Walras' law (that is, show that for any $\mathbf{p}$, $p_{1}z_{1}(\mathbf{p})+p_{2}z_{2}(\mathbf{p})=0$).
+	\smallskip\\\\
+	Excess demand is given by\\
+	$$z_i(\textbf{p})=\sum_{j=1}^nx_i^j-e_i^j$$
+	Walras' Law states for for a Walrasian Equilibrium\\
+	$$\textbf{p}\cdot z(\textbf{p})=0$$
+	We have\\
+	$z_1(\textbf{p})=x_1^1+x_1^2-e_1^1-e_1^2=2+\dfrac{1}{2}\dfrac{p_2}{p_1}+\dfrac{2p_2}{p_1}-6=\dfrac{5}{2}\dfrac{p_2}{p_1}-4$\\
+	$z_2(\textbf{p}=x_2^1+x_2^2-e_2^1-e_2^2=2\dfrac{p_1}{p_2}+\dfrac{1}{2}+\dfrac{2p_1}{p_2}-3=4\dfrac{p_1}{p_2}-\dfrac{5}{2}$\\\\
+	We can verify Walras' Law\\
+	$\textbf{p}\cdot z(\textbf{p})=p_1(\dfrac{5}{2}\dfrac{p_2}{p_1}-4)+p_2(4\dfrac{p_1}{p_2}-\dfrac{5}{2})=\dfrac{5}{2}p_2-4p_1+4p_1-\dfrac{5}{2}p_2=0$\\
+	\item[(d)] Find a Walrasian equilibrium for this economy and its associated WEA.
+	\smallskip\\\\
+	For a Walrasian equilibrium $z(\textbf(p))=0$\\
+	$\Rightarrow\dfrac{5}{2}\dfrac{p_2}{p_1}-4=0\Rightarrow\dfrac{p_2}{p_1}=\dfrac{8}{5}$\\
+	$\Rightarrow\textbf{x}^{1*}=(\dfrac{14}{5},\dfrac{7}{4})\Rightarrow\textbf{x}^{2*}=(\dfrac{16}{5},\dfrac{5}{4})$
+	\item[(e)] Suppose that there is one more consumer with $u^{3}(x_{1},x_{2})=\min\{x_{1},x_{2}\}$ and $\mathbf{e}^{3}=(0,9/2)$. Find a Walrasian equilibrium in this case.
+	\smallskip\\\\
+	For consumer 3, we have\\
+	$y^3=\dfrac{9}{2}p_2=p_1x_1^3+p_2x_2^3$\\
+	$x_1^{3*}=x_2^{3*}\Rightarrow x_1^{3*}=\dfrac{9p_2}{2(p_1+p_2)}\Rightarrow x_2^{3*}=\dfrac{9p_2}{2(p_1+p_2)}$\\\\
+	Our market clearing condition must hold\\
+	$z_1(\textbf{p})=x_1^1+x_1^2+x_1^3-e_1^1-e_1^2-e_1^3=\dfrac{5}{2}\dfrac{p_2}{p_1}+\dfrac{9p_2}{2(p_1+p_2)}-4=0$\\
+	$\Rightarrow 5p_2+5\dfrac{p_2^2}{p_1}+9p_2-8p_2-8p_1=0$\\
+	$\Rightarrow 5(\dfrac{p_2}{p_1})^2+6\dfrac{p_2}{p_1}-8=0$\\
+	Solving using quadratic formula\\
+	$\dfrac{p_2}{p_1}=\dfrac{-6+\sqrt{6^2-4(5)(-8)}}{2(5)}=\dfrac{-6+14}{10}=\dfrac{4}{5}$\\
+	$\Rightarrow\textbf{x}^{1*}=(\dfrac{12}{5},3)\Rightarrow\textbf{x}^{2*}=(\dfrac{8}{5},\dfrac{5}{2})\Rightarrow\textbf{x}^{3*}=(2,2)$
+	
+	\end{itemize}
+
+\end{enumerate}
+
+\end{document}
+

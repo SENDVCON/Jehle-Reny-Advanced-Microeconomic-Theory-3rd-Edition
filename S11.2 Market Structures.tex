@@ -1,0 +1,134 @@
+%\documentclass[11pt]{article}
+%\usepackage{sw20jart}
+%\input{tcilatex}
+
+
+\documentclass[11pt]{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage[left=2.5cm,top=2.8cm,right=2.5cm,bottom=2.8cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{theorem}
+\usepackage{version}
+\usepackage{pstricks}
+
+\usepackage{amssymb}
+%\usepackage{fourier}
+%\usepackage{microtype}
+
+\setcounter{MaxMatrixCols}{10}
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2953}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Tuesday, October 28, 2003 22:56:16}
+%TCIDATA{LastRevised=Monday, July 26, 2010 20:08:50}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="General\Andy-paper">}
+%TCIDATA{Language=American English}
+%TCIDATA{CSTFile=LaTeX article (bright).cst}
+
+\onehalfspacing
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{algorithm}{Algorithm}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}{Notation}
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}
+{\theorembodyfont{\normalfont}
+\newtheorem{remark}{Remark}
+}
+\newtheorem{summary}{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\hfill \rule{0.5em}{0.5em} \bigskip}
+\newenvironment{soln}[1][Soln]{\textbf{#1:} }{\hfill \rule{0.5em}{0.5em}}
+\renewcommand{\cite}{\citeasnoun}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumiii}{\roman{enumiii}}
+\renewcommand{\labelenumiii}{\theenumiii.}
+\begin{document}
+
+
+\begin{center}
+\textbf{Advanced Microeconomics S11.2\\}
+\textbf{Ruochen Zhou}
+\end{center}
+
+\medskip
+\begin{enumerate}
+\item Apple's iPod has been the portable MP3-player of choice among many gadget enthusiasts. Suppose that Apple has a constant marginal cost of 4 and that market demand is given by $q=200-2p$.
+	\begin{itemize}
+	\item[(a)] If Apple is a monopolist, find its optimal price and output. What are its profits?\\\\
+	Apple will maximize profit and so $MR=MC$\\
+	$p(q)=\dfrac{200-q}{2}$\\
+	$R=p(q)\cdot q=100q-\dfrac{q^2}{2}$\\
+	$MR=\dfrac{\partial}{\partial q}R=100-q$\\
+	$MR=MC\Rightarrow100-q=4\Rightarrow q^*=96\Rightarrow p^*=52\Rightarrow\pi=4608$\\
+	\item[(b)] Now suppose there is a competitive fringe of 12 price-taking firms, each of which has a total cost function $C(q) = 3q^{2} + 20q$. Find the supply function of the fringe.\\\\
+	Each fringe firm is a price taker and will maximize profit and so $p=MC$\\
+	$MC=\dfrac{\partial}{\partial q}C=6q+20$\\
+	$MC=p\Rightarrow6q+20=p\Rightarrow q^*=\dfrac{p-20}{6}$\\
+	Thus the fringe as a whole will supply\\
+	$q_F=12q^*=2p-40$\\
+	\item[(c)] If Apple operates as the dominant firm facing competition from the fringe in this market, now what is its optimal output? How many units will fringe providers sell? What is the market price, and how much profit does Apple earn?\\\\
+	The residual demand left to Apple will be\\
+	$q_A=q_T-q_F=200-2p-(2p-40)=240-4p\Rightarrow p(q^A)=\dfrac{240-q^A}{4}$\\
+	Apple will maximize profit and so $MR=MC$\\
+	$R=p(q_A)\cdot q_A=60q_A-\dfrac{q_A^2}{4}$\\
+	$MR=\dfrac{\partial}{\partial q_A}R=60-\dfrac{q_A}{2}$\\
+	$MR=MC\Rightarrow60-\dfrac{q_A}{2}=4\Rightarrow q_A^*=112\Rightarrow p^*=32\Rightarrow q_F^*=24\Rightarrow\pi_A=3136$
+	\end{itemize}
+\item Two firms, $A$ and $B$, sell an identical product and engage in Bertrand competition. There is one consumer who will purchase the product from the firm that offers the lower price. Suppose that firm $A$'s marginal cost is equal to $1$, while firm $B$'s is equal to $2$.
+	\begin{itemize}
+	\item[(a)] Suppose that each firm can choose a price only from $P=\{...,1-\Delta,1,1+\Delta,...,2-\Delta,2,2+\Delta,...\}$ for $\Delta$ positive and sufficiently small, and if $p_{A}=p_{B}$ then the consumer randomly selects one firm (with equal probability). Prove that it is an equilibrium that $p_{A}=2$ and $p_{B}=2+\Delta$.\\\\
+	At this stage, firm $A$ makes $1$ and firm $B$ makes zero.\\
+    Firm $A$ has no incentive to move as going up one increment to $2+\Delta$ will reduce their chance to make a sale from $1$ to $\dfrac{1}{2}$ at an incrementally higher price thus reducing expected profit from $1$ to $\frac{1+\Delta}{2}$ and going down one increment will to $2-\Delta$ will maintain the same level of sales at a lower price, reducing profit from $1$ to $1-\Delta$.\\
+    Firm $B$ has no incentive to move as going up one increment to $2+2\Delta$ will result in zero profit, to which they are indifferent and going down one increment will give them a $\dfrac{1}{2}$ probability to make a sale at zero profit, to which they are also indifferent.\\
+    Neither firm has an incentive to move and thus this is an equilibrium.\\
+	\item[(b)] Show that the strategy profile in (a) is not an equilibrium in the limit as $\Delta$ tends to $0$.\\\\
+	As $\Delta\rightarrow0$ Firm $A$ will have an incentive to move, as it will be able to increase their odds of making a sale from $\dfrac{1}{2}$ to $1$ at an incrementally lower price thus increasing their expected profit from $\dfrac{1}{2}$ to $1-\Delta$.  Thus, this cannot be an equilibrium\\
+	\item[(c)] Now suppose that it is possible that when $p_{A}=p_{B}$, the consumer selects firm $A$ (or $B$) with probability $1$. Prove that for any price $p\in[1,2]$, it is a Bertrand equilibrium (in the limit as $\Delta$ tends to $0$) that $p_{A}=p_{B}=p\in[1,2)$ and the consumer chooses firm $A$.\\\\
+	At this stage, firm $A$ makes $p-1$ and firm $B$ makes zero.\\
+	Firm $A$ has no incentive to move as going up one increment to $p+\Delta$ will reduce their chance to make a sale from $1$ to zero and thus decrease their profit from $p-1$ to zero and going down one increment will to $p-\Delta$ will maintain the same level of sales at a lower price, reducing profit from $p-1$ to $p-1-\Delta$.\\
+    Firm $B$ has no incentive to move as going up one increment to $p+\Delta$ will result in zero profit, to which they are indifferent and going down one increment to $p-\Delta$ will allow them to make a sale, but at a loss of $p-\Delta-2$ making them worse off.\\
+    Neither firm has an incentive to move and thus this is an equilibrium.\\
+	\end{itemize}
+\item Suppose that two firms, firm 1 and firm 2, engage in Bertrand competition for differentiated products, each with zero marginal cost. The demand curve for each firm is given as follows:
+	\begin{equation*}
+	D_{1}(p_{1},p_{2})=30-2p_{1}+p_{2}\text{ and }D_{2}(p_{1},p_{2})=50-3p_{2}+p_{1}.
+	\end{equation*}
+	\begin{enumerate}
+	\item Derive firm 1's best-response function $p_{1}=r_{1}(p_{2})$ to firm 2's price $p_{2}$.
+    \smallskip\\\\
+    Firm 1 takes $p_2$ as given and maximizes\\
+    $\pi_1=p_1\cdot D_1(p_1)=(30+p_2)p_1-2p_1^2$\\
+    $\Rightarrow\dfrac{\partial}{\partial p_1}\pi_1=30+p_2-4p_1=0\Rightarrow p_1^*=\dfrac{30+p_2}{4}$
+    \item Derive firm 2's best-response function $p_{2}=r_{2}(p_{1})$ to firm 1's price $p_{1}$.
+    \smallskip\\\\
+    Firm 2 takes $p_1$ as given and maximizes\\
+    $\pi_2=p_2\cdot D_2(p_2)=(50+p_1)p_2-3p_2^2$\\
+    $\Rightarrow\dfrac{\partial}{\partial p_2}\pi_2=50+p_1-6p_2=0\Rightarrow p_2^*=\dfrac{50+p_1}{6}$
+	\item Find the Bertrand equilibrium in this market and calculate each firm's profit.
+	\smallskip\\\\
+	At equilibrium, we have $p_1^*$ and $p_2^*$\\
+	$\Rightarrow p_2^*=\dfrac{50+\dfrac{30+p_2^*}{4}}{6}\Rightarrow p_2^*=10\Rightarrow p_1^*=10\Rightarrow\pi_1=200\Rightarrow\pi_2=300$
+	\end{enumerate}
+\end{enumerate}
+
+\end{document}
+

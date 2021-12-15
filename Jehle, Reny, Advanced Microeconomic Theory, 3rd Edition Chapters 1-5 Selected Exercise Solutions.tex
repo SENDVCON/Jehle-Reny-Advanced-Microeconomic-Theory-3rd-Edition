@@ -1,0 +1,324 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Advanced Microeconomic Theory\\Exercise Solutions}
+
+\author{Ruochen Zhou}
+\date{December 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Chapter 1}
+\section{Chapter 2}
+\begin{itemize}
+    \item Problem 2.31\\
+    Prove that for any VNM utility function, the condition $u'''(x)>0$ is necessary but not sufficient for DARA.\\\\
+    The Arrow-Pratt measure of absolute risk aversion is given by\\
+    $$r_A(x,u)\equiv-\dfrac{u''(X)}{u'(x)}$$
+    Thus our absolute risk aversion with respect to $x$ is given by\\\\
+    $$\dfrac{\partial}{\partial x}r_A(x,u)=-\dfrac{\partial}{\partial x}\dfrac{u''(X)}{u'(x)}=\dfrac{(u''(x))^2-u'(x)u'''(x)}{(u'(x))^2}$$
+    Thus it is apparent given our assumption that $u'(x)\geq0$ that $u'''(x)<0$ would in fact make this value positive, i.e. IARA.  Thus, the condition is necessary.\\\\
+    Moreover, if $\bigg|\dfrac{(u''(x))^2}{u'(x)}\bigg|\geq|u'''(x)|$ we would likewise have a non-negative value, i.e. IARA or CARA.  Thus, the condition is not sufficient.
+\end{itemize}
+\pagebreak
+\section{Chapter 3}
+\begin{itemize}
+    \item Problem 3.3\\
+    Prove that when the production function is homogeneous of degree one, it may be written as the sum $f(\textbf{x})=\sum_{i=1}^nMP_i(\textbf{x})x_i$, where $MP_i(\textbf{x})$ is the marginal product of input $i$.\\\\
+    If the production function is homogenous of degree one, then\\\\
+    $$tf(\textbf{x})=f(t\textbf{x})\Rightarrow \dfrac{\partial}{\partial t}tf(\textbf{x})=\dfrac{\partial}{\partial t}f(t\textbf{x})=\dfrac{\partial}{\partial t}f(\sum_{i=1}^ntx_i)$$
+    $$\Rightarrow f(\textbf{x})=\sum_{i=1}^n\dfrac{\partial f(t\textbf{x})}{\partial tx_i}\dfrac{\partial tx_i}{\partial t}=\sum_{i=1}^nMP_i(\textbf{x})x_i$$
+    \pagebreak
+    \item Problem 3.13\\
+    A generalization of the CES production function is given by\\
+    $$y=A(\alpha_0+\sum_{i=1}^n\alpha_ix_i^\rho)^{\beta/\rho}$$
+    for $A>0$, $\alpha_0\geq0$, $\alpha_i\geq0$, and $0\neq\rho<1$.  Calculate $\sigma_{ij}$ for this function.  Show that when $\alpha_0=0$, the elasticity of scale is measured by the parameter $\beta$.\\\\
+    The elasticity of substitution $\sigma_{ij}$ is given by\\
+    $$\sigma_{ij}=\dfrac{\dfrac{d(\frac{x_j}{x_i})}{(\frac{x_j}{x_i})}}{\dfrac{dMRTS_{ij}}{MRTS_{ij}}}=\dfrac{1}{\dfrac{dMRTS_{ij}}{d(\frac{x_j}{x_i})}}\dfrac{MRTS_{ij}}{(\dfrac{x_j}{x_i})}$$
+    The marginal rate of technical substitution of input $i$ to input $j$ is the rate at which input $i$ can be substituted for input $j$ without changing output $y$ and is given by\\
+    $$MRTS_{ij}=\dfrac{\dfrac{\partial f(\textbf{x})}{\partial x_i}}{\dfrac{\partial f(\textbf{x})}{\partial x_j}}=\dfrac{MP_i}{MP_j}$$
+    And so we have \\\\
+    $MRTS_{ij}=\dfrac{MP_i}{MP_j}=\dfrac{A(\frac{\beta}{\rho})(\alpha_0+\sum_{i=1}^n\alpha_ix_i^\rho)^{\beta/\rho-1}(\alpha_i\rho x_i^{\rho-1})}{A(\frac{\beta}{\rho})(\alpha_0+\sum_{i=1}^n\alpha_ix_i^\rho)^{\beta/\rho-1}(\alpha_j\rho x_j^{\rho-1})}=\dfrac{\alpha_ix_j}{\alpha_jx_i}$\\\\
+    $\sigma_{ij}=\dfrac{1}{\dfrac{dMRTS_{ij}}{d(\frac{x_j}{x_i})}}\dfrac{MRTS_{ij}}{(\dfrac{x_j}{x_i})}=\dfrac{1}{\dfrac{\alpha_i}{\alpha_j}}\dfrac{\dfrac{\alpha_i}{\alpha_j}\dfrac{x_j}{x_i}}{\dfrac{x_j}{x_i}}=1$\\\\
+    The output elasticity of input $i$ is given by is the measure of the relative change in output versus the relative change in input $i$\\
+    $$\mu_i=\dfrac{\dfrac{df(\textbf{x})}{f(\textbf{x})}}{\dfrac{dx_i}{x_i}}=\dfrac{\dfrac{df(\textbf{x})}{dx_i}}{\dfrac{f(\textbf{x})}{x_i}}=\dfrac{MP_i}{AP_i}$$
+    The elasticity of scale is given by\\
+    $$\mu(\textbf{x})=\sum_{i=1}^n\mu_i(\textbf{x})$$
+    Thus, if $\alpha_0=0$, we have\\\\
+    $\mu_i=\dfrac{MP_i}{AP_i}=\dfrac{A(\frac{\beta}{\rho})(\sum_{i=1}^n\alpha_ix_i^\rho)^{\beta/\rho-1}(\alpha_i\rho x_i^{\rho-1})}{\dfrac{A(\sum_{i=1}^n\alpha_ix_i^\rho)^{\beta/\rho}}{x_i}}=\dfrac{\beta\alpha_i x_i^\rho}{\sum_{i=1}^n\alpha_ix_i^\rho}$\\
+    $\mu(\textbf{x})=\sum_{i=1}^n\mu_i(\textbf{x})=\sum_{i=1}^n\dfrac{\beta\alpha_i x_i^\rho}{\sum_{i=1}^n\alpha_ix_i^\rho}=\beta$\\
+    And so the elasticity of scale is measured by parameter $\beta$.
+    \pagebreak
+    \item Problem 3.32\\
+    Show that when average cost is declining, marginal cost must be less than average cost; when average cost is constant, marginal cost must be equal average cost; and when average cost is increasing, marginal cost must be greater than average cost.\\\\
+    Average cost is given by\\
+    $$AC(q)=\dfrac{C(q)}{q}$$
+    Marginal cost is given by\\
+    $$MC(q)=C'(q)$$
+    And so the change in average cost with respect to $q$ is given by\\
+    $$\dfrac{d}{dq}\dfrac{C(q)}{q}=\dfrac{qC'(q)-C(q)}{q^2}=\dfrac{C'(q)-\frac{C(q)}{q}}{q}=\dfrac{MC-AC}{q}$$
+    From here it is clear that our relationship holds, i.e.\\\\
+    $MC(q)<AC(q)\Rightarrow AC'(q)<0$\\
+    $MC(q)=AC(q)\Rightarrow AC'(q)=0$\\
+    $MC(q)>AC(q)\Rightarrow AC'(q)>0$
+    \pagebreak
+    \item Problem 3.35\\
+    A utility produces electricity to meet the demands of a city.  The price it can charge for electricity is fixed and it must meet all demand at that price.  It turns out that the amount of electricity demanded is always the same over every 24-hour period, but demand differs from day (6:00 A.M. to 6:00 P.M.) to night (6:00 P.M. to 6:00 A.M.).  During the day, 4 units are demanded, whereas during the night only 3 units are demanded.  Total output for each 24-hour period is thus always equal to 7 units.  The utility produces electricity according to the production function\\
+    $$y_i=(KF_i)^{1/2}\text{ }i=d,n$$
+    where $K$ is the size of the generating plant, and $F_i$ is tons of fuel.  The firm must build a single plant; it cannot change the plant size from day to night.  If a plant of size $K$ costs $w_k$ per 24-hour period and a ton of fuel costs $w_f$, what size plant will the utility build?\\\\
+    We must satisfy the following constraints\\
+    $$y_d=4=(KF_d)^{1/2}\Rightarrow F_d=\dfrac{16}{K}$$
+    $$y_n=3=(KF_n)^{1/2}\Rightarrow F_n=\dfrac{9}{K}$$
+    We want to minimize our cost objective with respect to $K$\\
+    $$c(K,\textbf{F})=w_kK+w_f(F_d+F_n)\Rightarrow w_kK+w_f(\dfrac{16}{K}+\dfrac{9}{K})$$
+    Our first order condition is thus\\
+    $$\dfrac{\partial}{\partial K}c(K,\textbf{F})=w_k-\dfrac{25w_f}{K^2}=0\Rightarrow K=5(\dfrac{w_f}{w_k})^{1/2}$$
+\end{itemize}
+\pagebreak
+\section{Chapter 4}
+\begin{itemize}
+    \item Problem 4.5\\
+    Show that the long-run equilibrium number of firms is indeterminate when all firms in the industry share the same constant returns-to-scale technology and face the same factor prices.\\\\
+    Every firm is profit maximizing and so we have\\
+    $MR=MC$\\\\
+    In the long-run, new firms will continue to enter the market until there is zero profit, we have\\
+    $AC=p$\\\\
+    If all firms have same constant returns-to-scale, then they have same constant marginal cost, and thus same constant average cost and so we have\\
+    $p^*=AC=MC=MR$ along with a resultant $q^d(p^*)$\\\\
+    Well, since at price $p^*$ each firm will be at equilibrium producing any quantity, number of firms and production of each individual firm is in determinant. 
+    \pagebreak
+    \item Problem 4.8\\
+    (Cournot competition with asymmetric firms) Consider the Cournot oligopoly problem with $J=2$ (two firms) and linear inverse demand $p=a-b(q_1+q_2)$.  Now suppose that the two firms have different cost functions: firm 1's cost function is given by $C_1(q_1)=c_1q_1$, while firm 2's is given by $C_2(q_2)=c_2q_2$.  Assume that $0\leq c_1<c_2$.  Find the unique Cournot equilibrium in this environment.   Show that firm 1 will have have greater profits and produce a greater share of market output than firm 2 in the Nash equilibrium.\\\\
+    Intuitively, this must be true since the firm with lower cost has a competitive advantage.  Each firm is profit maximizing.\\\\
+    Firm 1's profit function given firm 2's output $q_2$ is given by\\
+    $\pi_1=p(q_1,q_2)\cdot q_1-C_1(q_1)=(a-b(q_1+q_2))q_1-c_1q_1=(a-bq_2-c_1)q_1-bq_1^2$\\
+    Firm 1 selects $q_1$ to maximize profit, we have the first order condition\\
+    $a-bq_2-c_1-2bq_1=0$\\\\
+    Firm 2's profit function given firm 1's output $q_1$ is given by\\
+    $\pi_2=p(q_1,q_2)\cdot q_2-C_2(q_2)=(a-b(q_1+q_2))q_2-c_2q_2=(a-bq_1-c_2)q_2-bq_2^2$\\
+    Firm 2 selects $q_2$ to maximize profit, we have the first order condition\\
+    $a-bq_1-c_2-2b_2=0$\\\\
+    Our Nash Equilibrium is thus given by the solution to our first order conditions\\
+    $a-bq_1-c_2-2b_2=a-bq_2-c_1-2bq_1$\\
+    $\Rightarrow bq_1-c_2=bq_2-c_1$ and given $0\leq c_1<c_2<\frac{a}{2}$\\
+    $\Rightarrow \bar{q}_1>\bar{q}_2$\\
+    It should then be clear $R_1>R_2$ and $C_1<C_2$\\
+    $\Rightarrow \bar{\pi}_1>\bar{\pi}_2$
+    \pagebreak
+    \item Problem 4.9\\
+    In a Stackelberg duopoly, one firm is a 'leader' and one is a 'follower'.  Both firms know each other's costs and market demand.  The follower takes the leader's output as given and picks his own output accordingly (i.e., the follower acts like a Cournot competitor).  The leader takes the follower's reactions as given and picks his own output accordingly.  Suppose that firms 1 and 2 face market demand, $p=100-(q_1+q_2)$.  Firm costs are $C_1(q_1)=10q_1$ and $C_2(q_2)=q_2^2$.\\\\
+    (a) Calculate market price and each firm's profit assuming that firm 1 is the leader and firm 2 the follower.\\\\
+    Each firm is profit maximizing.\\\\
+    Firm 2's profit function given firm 1's output $q_1$ is given by\\
+    $\pi_2=p(q_1,q_2)\cdot q_2-C_2(q_2)=(100-(q_1+q_2))q_2-q_2^2=(100-q_1)q_2-2q_2^2$\\
+    Firm 2 selects $q_2$ to maximize profit, we have the first order condition\\
+    $100-q_1-4q_2=0$\\
+    $\Rightarrow \bar{q_2}=25-\frac{1}{4}q_1$\\\\
+    Firm 1's profit function given firm 2's output $q_2(q_1)$ is given by\\
+    $\pi_1=p(q_1,q_2(q_1))-C_1(q_1)=(100-(q_1+25-\frac{1}{4}q_1)q_1-10q_1=65q_1-\frac{3}{4}q_1^2$\\
+    Firm 1 selects $q_1$ to maximize profit, we have the first order condition\\
+    $65-\frac{3}{2}q_1=0$\\
+    $\Rightarrow \bar{q_1}=\dfrac{130}{3}$ $\Rightarrow \bar{q_2}=\dfrac{85}{6}$\\\\
+    $\Rightarrow \bar{\pi}_1=\dfrac{4225}{3}\sim1408.33$ $\Rightarrow \bar{\pi}_2=\dfrac{7225}{18}\sim401.39$\\\\
+    (b) Do the same assuming that firm 2 is the leader and firm 1 is the follower.\\\\
+    Each firm is profit maximizing.\\\\
+    Firm 1's profit function given firm 2's output $q_2$ is given by\\
+    $\pi_1=p(q_1,q_2)\cdot q_1-C_1(q_1)=(100-(q_1+q_2))q_1-10q_1=(90-q_2)q_1-q_1^2$\\
+    Firm 1 selects $q_1$ to maximize profit, we have the first order condition\\
+    $90-q_2-2q_1=0$\\
+    $\Rightarrow \bar{q_1}=45-\frac{1}{2}q_2$\\\\
+    Firm 2's profit function given firm 1's output $q_1(q_2)$ is given by\\
+    $\pi_1=p(q_1(q_2),q_2)-C_2(q_2)=(100-(45-\frac{1}{2}q_2+q_2)q_2-q_2^2=55q_2-\frac{3}{2}q_2^2$\\
+    Firm 2 selects $q_2$ to maximize profit, we have the first order condition\\
+    $55-3q_2=0$\\
+    $\Rightarrow \bar{q_2}=\dfrac{55}{3}$ $\Rightarrow \bar{q_1}=\dfrac{215}{6}$\\\\
+    $\Rightarrow \bar{\pi}_1=\dfrac{46225}{36}\sim1284.03$ $\Rightarrow \bar{\pi}_2=\dfrac{3025}{6}\sim504.17$\\\\
+    (c) Given your answers in parts (a) and (b), who would firm 1 want to be the leader in the market?  Who would firm 2 want to be the leader?\\\\
+    Each firm would prefer that they are themselves the leader in the market as the first to move has an advantage in this game.\\\\
+    (d) If each firm assumes what it wants to be the case in part (c), what are the equilibrium market price and firm profits?\\\\
+    This would then reduce to a case of Cournot competition, each firm is still profit maximizing\\\\
+    From parts (a) and (b), we have the profit maximizing first order condition for firms 1 and 2 given by\\
+    $90-q_2-2q_1=0$\\
+    $100-q_1-4q_2=0$\\
+    And our Nash Equilibrium given by their solution as\\
+    $\Rightarrow\bar{q}_1=\dfrac{260}{7}$ $\Rightarrow\bar{q}_2=\dfrac{110}{7}$\\\\
+    $\Rightarrow \bar{\pi}_1=\dfrac{67600}{49}\sim1379.59$ $\Rightarrow \bar{\pi}_2=\dfrac{28600}{49}\sim583.67$
+    \pagebreak
+    \item Problem 4.13\\
+    Duopolists producing substitute goods $q_1$ and $q_2$ face inverse demand schedules:
+    $$p_1=20+\dfrac{1}{2}p_2-q_1\text{ and }p_2=20+\dfrac{1}{2}p_1-q_2$$
+    respectively.  Each firm has constant marginal costs of 20 and no fixed costs.  Each firm is a Cournot competitor in \emph{price}, not quantity.  Compute the Cournot (Bertrand) equilibrium in this market, giving equilibrium price and output for each good.\\\\ 
+    Each firm is profit maximizing.\\\\
+    Firm 1 will select $q_1(p_1,p_2)=20+\frac{1}{2}p_2-p_1$\\
+    Firm 1's profit function given firm 2's price level $p_2$ is given by\\
+    $\pi_1=p_1\cdot q_1(p1,p2)-20q_1(p1,p2)=p_1(20+\frac{1}{2}p_2-p_1)-20(20+\frac{1}{2}p_2-p_1)$\\
+    $=-400-10p_2+(40+\frac{1}{2}p_2)p_1-p_1^2$\\
+    Firm 1 selects $p_1$ to maximize profit, we have the first order condition\\
+    $40+\frac{1}{2}p_2-2p_1=0$\\\\
+    Firm 2 will select $q_2(p_1,p_2)=20+\frac{1}{2}p_1-p_2$\\
+    Firm 2's profit function given firm 1's price level $p_1$ is given by\\
+    $\pi_2=p_2\cdot q_2(p1,p2)-20q_2(p1,p2)=p_2(20+\frac{1}{2}p_1-p_2)-20(20+\frac{1}{2}p_1-p_2)$\\
+    $=-400-10p_1+(40+\frac{1}{2}p_1)p_2-p_2^2$\\
+    Firm 1 selects $p_2$ to maximize profit, we have the first order condition\\
+    $40+\frac{1}{2}p_1-2p_2=0$\\\\
+    Our Nash Equilibrium is thus given by the solution to our first order conditions.  Note that by symmetry, it is clear $\bar{p}_1=\bar{p}_2$ and $q_1^*=q_2^*$.\\
+    $\Rightarrow \bar{p}_1=\dfrac{80}{3}$ $\Rightarrow \bar{p}_2=\dfrac{80}{3}$\\
+    $\Rightarrow q_1^*=\dfrac{20}{3}$ $\Rightarrow q_2^*=\dfrac{20}{3}$
+    \pagebreak
+    \item Problem 4.14\\
+    An industry consists of many identical firms each with cost function $c(q)=q^2+1$.  When there are $J$ active firms, each firm faces an identical inverse market demand $p=10-15q-(J-1)\bar{q}$ whenever an identical output of $\bar{q}$ is produced by each of the other $j-1$ active firms.\\\\
+    (a) With $J$ active firms, and no possibility for entry or exit, what is the short-run equilibrium output $q*$ of a representative firm when firms act as Cournot competitors in choosing output?\\\\
+    Each firm is profit maximizing\\\\
+    For a representative firm $i$, the profit function given output $\bar{q}$ by all other firms is given by\\
+    $\pi_i=p(q_i)\cdot q_i-C_i(q_i)=(10-15q_i-(J-1)\bar{q})q_i-q_i^2+1$\\
+    $=-16q_i^2+(10-(J-1)\bar{q})q_i+1$\\
+    Firm $i$ will select $q_i$ to maximize profit, we have the first order condition\\
+    $-32q_i+(10-(J-1)\bar{q})=0$\\
+    $\Rightarrow q_i^*=\dfrac{10-(J-1)\bar{q}}{32}$\\\\
+    (b) How many firms will be active in the long run?\\\\
+    In the long run, each firm is still profit maximizing, we have\\\\
+    $q_i^*=\dfrac{10-(J-1)\bar{q}}{32}$\\\\
+    At equilibrium, as each firm faces identical cost and demand, we have\\\\
+    $q^*=\bar{q}$.\\
+    $\Rightarrow \bar{q}=\dfrac{10-(J-1)\bar{q}}{32}$\\
+    $\Rightarrow \bar{q}=\dfrac{10}{j+31}$\\\\
+    In the long run, new firms will continue to enter the market until there is zero profit, we have\\\\
+    $AC=p$\\
+    $\Rightarrow\dfrac{C(\bar{q})}{\bar{q}}=p$\\
+    $\Rightarrow\dfrac{\bar{q}^2+1}{\bar{q}}=10-15\bar{q}-(J-1)\bar{q}$\\
+    $\Rightarrow -(J+15)\bar{q}^2+10\bar{q}=1$\\
+    $\Rightarrow -(J+15)(\dfrac{10}{j+31})^2+10(\dfrac{10}{j+31})=1$\\
+    $\Rightarrow\dfrac{1600}{(J+31)^2}=1$\\
+    $\Rightarrow J=9$
+\end{itemize}
+\pagebreak
+\section{Chapter 5}
+\begin{itemize}
+    \item Problem 5.10\\
+    In a two-person, two-good exchange economy with strictly increasing utility functions, an allocation $\bar{x}\in F(\textbf{e})$ is Pareto efficient if and only if $\bar{x}^i$ solves the problem
+    \begin{equation*}
+        \max_{\mathbf{x}^{i}}u^{i}(\mathbf{x}^{i})\text{ s.t. }u^{j}(\mathbf{x}^{j})\geq u^{j}(\overline{\mathbf{x}}^{j}),~x_{1}^{1}+x_{1}^{2}= e_{1}^{1}+e_{1}^{2},\text{ and }x_{2}^{1}+x_{2}^{2}= e_{2}^{1}+e_{2}^{2}
+    \end{equation*}
+    for $i=1,2$ and $i\neq j$.  Prove this claim.\\\\
+    $\Rightarrow$\\
+    Suppose $\bar{\textbf{x}}$ is a Pareto efficient allocation.  Now further suppose there exists some other allocation $\texxtbf{x}$ such that $u^i(\textbf{x}^i)>u^i(\bar{\textbf{x}}^i)$ and $u^j(\textbf{x}^j)\geq u^j(\bar{\textbf{x}}^j)$.  Well then clearly $\textbf{x}$ Pareto dominates $\bar{\textbf{x}}$, violating our supposition that $\bar{\textbf{x}}$ is Pareto efficient.\\\\
+    $\Leftarrow$\\
+    Suppose $\bar{\textbf{x}}$ satisfies our maximization problem.  If the maximum is unique then this satisfies our definition of Pareto efficiency for $\bar{\textbf{x}}$. Suppose there exists some other allocation $\textbf{x}$ such that $u^i(\textbf{x}^i)=u^i(\bar{\textbf{x}}^i)$ and $u^j(\textbf{x}^j)\geq u^j(\bar{\textbf{x}}^j)$.  If $u^j(\textbf{x}^j)=u^j(\bar{\textbf{x}}^j)$ then this would still satisfy our definition of Pareto efficiency for $\bar{\textbf{x}}$.  If $u^j(\textbf{x}^j)>u^j(\bar{\textbf{x}}^j)$, given the that $u^j$ is strictly increasing, we can find some bundle $\vareplison>0$ such that $u^j(\textbf{x}^j-\varepsilon=u^j(\bar{\textbf{x}}^j)$.  Well then since $u^i$ is also strictly increasing $u^i(\textbf{x}^i+\varespilon)>u^i(\bar{\textbf{x}})$, violating our supposition of a maximum.
+    \pagebreak
+    \item Problem 5.11\\
+    Consider a two-consumer, two-good exchange economy.  Utility functions and endowments are
+    $$u^1(x_1,x_2)=(x_1x_2)^2\text{ and }e^1=(18,4)$$
+    $$u^2(x_1,x_2)=ln(x_1)+2ln(x_2)\text{ and }e^2=(3,6)$$
+    (a) Characterize the set of Pareto-efficient allocations as completely as possible.\\\\
+    For an allocation to be Pareto-efficient, we must have\\\\  
+    (1) $MRS_{12}^1=MRS_{12}^2$\\
+    $\Rightarrow\dfrac{x_2^1}{x_1^1}=\dfrac{x_2^2}{2x_1^2}$\\\\
+    (2) $\textbf{x}^1+\textbf{x}^2=e^1+e^2$\\
+    $\Rightarrow x_1^1+x_1^2=21$\\
+    $\Rightarrow x_2^1+x_2^2=10$\\\\
+    $\Rightarrow\dfrac{x_2^1}{x_1^1}=\dfrac{10-x_2^1}{2(21-x_1^1)}\Rightarrow x_2^1(42-2x_1^1)=(10-x_2^1)x_1^1$\\
+    $\Rightarrow-10x_1^1+42x_2^1-x_1^1x_2^1=0$\\
+    (b) Find a Walrasian equilibrium and compute the WEA.\\\\
+    For consumer 1, we have\\
+    $y^1=18p_1+4p_2$\\
+    $x_1^{1*}=\dfrac{18p_1+4p_2}{2p_1}$ and $x_2^{1*}=\dfrac{18p_1+4p_2}{2p_2}$\\\\
+    For consumer 2, we have\\
+    $y^2=3p_1+6p_2$\\
+    $x_1^{2*}=\dfrac{3p_1+6p_2}{3p_1}$ and $x_2^{2*}=\dfrac{2(3p_1+6p_2)}{3p_2}$\\\\
+    Our market clearing condition must hold\\
+    $\Rightarrow x_1^1+x_1^2=21\Rightarrow 9+2\dfrac{p_2}{p_1}+1+2\dfrac{p_2}{p_1}=21\Rightarrow\dfrac{p_2}{p_1}=\dfrac{11}{4}$\\\\
+    $\Rightarrow\textbf{x}^1=(\dfrac{29}{2},\dfrac{58}{11})\Rightarrow\textbf{x}^2=(\dfrac{13}{2},\dfrac{52}{11})$\\
+    (c) Verify that the WEA you found in part (b) is Pareto efficient.\\\\
+    It is sufficient to show that our condition\\
+    $-10x_1^1+42x_2^1-x_1^1x_2^1=0$ holds\\\\
+    $-10(\dfrac{29}{2})+42(\dfrac{58}{11})-(\dfrac{29}{2})(\dfrac{58}{11})=0$
+    \pagebreak
+    \item Problem 5.12\\
+    There are two goods and two consumers.  Preferences and endowments are described by
+    $$u^1(x_1,x_2)=min(x_1,x_2)\text{ and }e^1=(30,0)$$
+    $$v^2(\textbf{p},y)=\dfrac{y}{2\sqrt{p_1p_2}}\text{ and }e^2=(0,20)$$
+    respectively.\\\\
+    (a) Find a Walrasian equilibrium for this economy and its associated WEA.\\\\
+    $$\text{(Roy's Identity) }-\dfrac{\dfrac{\partial}{\partial p_i}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=x_i^*$$
+    For consumer 1, we have\\
+    $y^1=30p_1$\\
+    $x_1^{1*}=\dfrac{30p_1}{p_1+p_2}$ and $x_2^{1*}=\dfrac{30p_1}{p_1+p_2}$\\\\
+    For consumer 2, we have\\
+    $y^2=20p_2$\\
+    $x_1^{2*}=-\dfrac{\dfrac{\partial}{\partial p_1}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=-\dfrac{\dfrac{-y}{4p_1\sqrt{p_1p_2}}}{\dfrac{1}{2\sqrt{p_1p_2}}}=\dfrac{y}{2p_1}=\dfrac{20p_2}{2p_1}=10\dfrac{p_2}{p_1}$\\
+    $x_2^{2*}=-\dfrac{\dfrac{\partial}{\partial p_2}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=-\dfrac{\dfrac{-y}{4p_2\sqrt{p_1p_2}}}{\dfrac{1}{2\sqrt{p_1p_2}}}=\dfrac{y}{2p_2}=\dfrac{20p_2}{2p_2}=10$\\\\
+    Our market clearing condition must hold and so\\
+    $x_2^1+x_2^2=20\Rightarrow \dfrac{30p_1}{p_1+p_2}+10=20\Rightarrow\dfrac{p_2}{p_1}=2$\\
+    $\Rightarrow\textbf{x}^1=(10,10)\Rightarrow\textbf{x}^2=(20,10)$\\\\
+    (b) Do the same when consumer 1's endowment is $e^1=(5,0)$ and consumer 2's remains $e^2=(0,20)$.  Note that $p_1,p_2\geq0$, but it is possible that $p_1=0$ or $p_2=0$.\\\\
+    For consumer 1, we have\\
+    $y^1=5p_1$\\
+    $x_1^{1*}=\dfrac{5p_1}{p_1+p_2}$ and $x_2^{1*}=\dfrac{5p_1}{p_1+p_2}$\\\\
+    For consumer 2, we still have\\
+    $y^2=20p_2$\\
+    $x_1^{2*}=10\dfrac{p_2}{p_1}$ and $x_2^{2*}=10$\\\\
+    Our market clearing condition gives us\\
+    $x_2^1+x_2^2=20\Rightarrow \dfrac{5p_1}{p_1+p_2}+10=20\Rightarrow\dfrac{p_2}{p_1}=\dfrac{-1}{2}<0$\\\\
+    We check corner conditions\\
+    Suppose $p_1=0$\\
+    This would result in consumer 2 having infinte demand for good 1 and so this would violate equilibrium\\\\
+    Suppose $p_2=0$\\
+    This would give us $\textbf{x}^1=(5,x_2^1\in[5,20])$ and $\textbf{x}^2=(0,20-x_2^1)$
+    \pagebreak
+    \item Problem 5.13\\
+    An exchange economy has two consumers with expenditure functions:
+    $$e^1(\textbf{p},u)=(3(1.5)^2p_1^2p_2e^u)^{1/3}$$
+    $$e^2(\textbf{p},u)=(3(1.5)^2p_2^2p_1e^u)^{1/3}$$
+    If initial endowments are $e^1=(10,0)$ and $e^2=(0,10)$, find the Walrasian equilibrium.\\\\
+    $$\text{(Roy's Identity) }-\dfrac{\dfrac{\partial}{\partial p_i}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=x_i^*$$
+    For consumer 1, we have\\
+    $y^1=10p_1$\\\\
+    By Duality Theorem\\\\
+    $e^1(\textbf{p},u)=(3(1.5)^2p_1^2p_2e^u)^{1/3}\Rightarrow y=(3(1.5)^2p_1^2p_2e^{v(\textbf{p},y)})^{1/3}$\\
+    $\Rightarrow v^1(\textbf{p},y)=log(\dfrac{y^3}{3(1.5)^2p_1^2p_2})$\\\\
+    By Roy's Identity\\\\
+    $x_1^{1*}=-\dfrac{\dfrac{\partial}{\partial p_1}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=-\dfrac{\dfrac{3(1.5)^2p_1^2p_2}{y^3}}{\dfrac{3(1.5)^2p_1^2p_2}{y^3}}\dfrac{\dfrac{-2y^3}{3(1.5)^2p_1^3p_2}}{\dfrac{3y^2}{3(1.5)^2p_1^2p_2}}=\dfrac{2y}{3p_1}=\dfrac{20}{3}$\\
+    $x_2^{1*}=-\dfrac{\dfrac{\partial}{\partial p_2}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=-\dfrac{\dfrac{3(1.5)^2p_1^2p_2}{y^3}}{\dfrac{3(1.5)^2p_1^2p_2}{y^3}}\dfrac{\dfrac{-y^3}{3(1.5)^2p_1^2p_2^2}}{\dfrac{3y^2}{3(1.5)^2p_1^2p_2}}=\dfrac{y}{3p_2}=\dfrac{10p_1}{3p_2}$\\\\
+    For consumer 2, we have\\
+    $y^2=10p_2$\\\\
+    By Duality Theorem\\\\
+    $e^2(\textbf{p},u)=(3(1.5)^2p_2^2p_1e^u)^{1/3}\Rightarrow y=(3(1.5)^2p_2^2p_1e^{v(\textbf{p},y)})^{1/3}$\\
+    $\Rightarrow v^2(\textbf{p},y)=log(\dfrac{y^3}{3(1.5)^2p_2^2p_1})$\\\\
+    By Roy's Identity\\\\
+    $x_1^{2*}=-\dfrac{\dfrac{\partial}{\partial p_1}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=-\dfrac{\dfrac{3(1.5)^2p_2^2p_1}{y^3}}{\dfrac{3(1.5)^2p_2^2p_1}{y^3}}\dfrac{\dfrac{-y^3}{3(1.5)^2p_2^2p_1^2}}{\dfrac{3y^2}{3(1.5)^2p_2^2p_1}}=\dfrac{y}{3p_1}=\dfrac{10p_2}{3p_1}$\\
+    $x_2^{2*}=-\dfrac{\dfrac{\partial}{\partial p_2}v(\textbf{p}y)}{\dfrac{\partial}{\partial y}v(\textbf{p}y)}=-\dfrac{\dfrac{3(1.5)^2p_2^2p_1}{y^3}}{\dfrac{3(1.5)^2p_2^2p_1}{y^3}}\dfrac{\dfrac{-2y^3}{3(1.5)^2p_2^3p_1}}{\dfrac{3y^2}{3(1.5)^2p_2^2p_1}}=\dfrac{2y}{3p_2}=\dfrac{20}{3}$\\\\
+    Our market clearing condition must hold and so we have
+    $x_1^1+x_1^2=10\Rightarrow\dfrac{20}{3}+\dfrac{10p_1}{3p_2}=10\Rightarrow{p_1}{p_2}=1$\\
+    $\Rightarrow\textbf{x}^1=(\dfrac{20}{3},\dfrac{10}{3})\Rightarrow\textbf{x}^2=(\dfrac{10}{3},\dfrac{20}{3})$
+    \pagebreak
+    \item Problem 5.17\\
+    Consider an exchange economy with two identical consumers.  Their common utility function is $u^i(x_1,x_2)=x_1^{\alpha}x_2^{1-\alpha}$ for $0<\alpha<1$.  Society has 10 units of $x_1$ and 10 units of $x_2$ in all.  Find endowments $e^1$ and $e^2$, where $e^1\neq e^2$, and Walrasian equilibrium prices that will 'support' as a WEA the equal-division allocation giving both consumers the bundle $(5,5)$\\\\
+    For consumer 1, we have\\
+    $y^1=p_1e_1^1+p_2e_2^1$\\
+    $MRS_{12}^1=\dfrac{\alpha}{1-\alpha}\dfrac{x_2^1}{x_1^1}=\dfrac{p_1}{p_2}$\\
+    $\Rightarrow p_1x_1^1+p_2(\dfrac{1-\alpha}{\alpha}\dfrac{p1}{p2}x_1^1)=p_1e_1^1+p_2e_2^1\Rightarrow x_1^{1*}=\dfrac{\alpha(p_1e_1^1+p_2e_2^1)}{p_1}$\\
+    $\Rightarrow p_1(\dfrac{\alpha}{1-\alpha}\dfrac{p_2}{p_1}x_2^1)^1+p_2x_2=p_1e_1^1+p_2e_2^1\Rightarrow x_2^{1*}=\dfrac{(1-\alpha)(p_1e_1^1+p_2e_2^1)}{p_2}$\\\\
+    For consumer 2, we similarly have\\
+    $\Rightarrow x_1^{2*}=\dfrac{\alpha(p_1e_1^2+p_2e_2^2)}{p_1}\Rightarrow x_2^{2*}=\dfrac{(1-\alpha)(p_1e_1^2+p_2e_2^2)}{p_2}$\\\\
+    Our market clearing condition must hold and moreover $e^1+e^2=(10,10)$\\
+    $\Rightarrow x_1^1+x_1^2=10\Rightarrow\dfrac{10\alpha(p_1+p_2)}{p_1}=10\Rightarrow\dfrac{p_2}{p_1}=\dfrac{1-\alpha}{\alpha}$\\\\
+    Thus, we have a WEA if it satisfies\\
+    $\textbf{x}^1=(\alpha e_1^1+(1-\alpha)e_2^1,\alpha e_1^1+(1-\alpha)e_2^1)=5$\\
+    $\textbf{x}^2=(\alpha e_1^2+(1-\alpha)e_2^2,\alpha e_1^2+(1-\alpha)e_2^2)=5$
+    \pagebreak
+    \item Problem 5.21\\
+    Consider an exchange economy with two consumers.  Consumer 1 has utility function $u^1(x_1,x_2)=x_2$ and endowment $e^1=(1,1)$ and consumer 2 has utility function $u^2(x_1,x_2)=x_1+x_2$ and endowment $e^2=(1,0)$.  Show that there does not exist a Walrasian equilibrium in this exchange economy.\\\\
+    For consumer 1, we have\\
+    $y^1=p_1+p_2$\\
+    $x_1^{1*}=0$ and $x_2^{1*}=\dfrac{p_1+p_2}{p_2}=1+\dfrac{p_1}{p_2}$\\\\
+    Suppose $p_1=0$ or $p_2=0$\\
+    Given consumer 2's preferences being perfect substitutes, any case where $p_1=0$ or $p_2=0$ would result in infinite demand and thus violate equilibrium.\\\\
+    Now suppose $p_1>0$ and $p_2>0$\\
+    For market clearing, we would need\\
+    $x_2^1+x_2^2=1+\dfrac{p_1}{p_2}+x_2^2=1$\\
+    But since $p_1>0$ and $p_2>0$, our market clearing condition cannot hold since $\dfrac{p_1}{p_2}>0$ thus violating equilibrium.
+\end{itemize}
+\end{document}
